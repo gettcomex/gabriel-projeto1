@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Book:</b>
+  <%= @queue_of_book.book %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @queue_of_book.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_queue_of_book_path(@queue_of_book) %> |
+<%= link_to 'Back', queue_of_books_path %>

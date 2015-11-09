@@ -1,0 +1,2633 @@
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (1.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20151109112251)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "login" varchar(255), "password" varchar(255), "email" varchar(255), "is_employee" boolean, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109112251')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "users" ADD "created_by" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109113115')
+Migrating to AddUpdateByToUser (20151109113229)
+  [1m[36mSQL (0.2ms)[0m  [1mALTER TABLE "users" ADD "update_by" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109113229')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 09:35:08 -0200
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 09:35:13 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (37.7ms)
+Rendered users/new.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 52ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-11-09 09:35:33 -0200
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"name"=>"gabriel", "login"=>"gt_katakura", "password"=>"[FILTERED]", "email"=>"gt.katakura@gmail.com", "is_employee"=>"1"}, "commit"=>"Create User"}
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "login", "password", "email", "is_employee", "created_at", "updated_at", "created_by", "update_by") VALUES ('gabriel', 'gt_katakura', '123456', 'gt.katakura@gmail.com', 't', '2015-11-09 11:35:33.979664', '2015-11-09 11:35:33.979664', NULL, NULL)[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 58ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2015-11-09 09:35:34 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered users/show.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 28ms (Views: 20.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 09:35:54 -0200
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 19ms (Views: 13.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 09:36:27 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00000102bd4540>:0x00000102b97528>):
+    28: 
+    29: <br />
+    30: 
+    31: <%= user.created_by %>
+    32: 
+    33: <%= link_to 'New User', new_user_path %>
+  app/views/users/index.html.erb:31:in `_app_views_users_index_html_erb__3320870621038778184_2170334860_1657100947753476695'
+  app/controllers/users_controller.rb:7:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 09:36:38 -0200
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 19ms (Views: 13.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 09:36:45 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 09:36:46 -0200
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 17ms (Views: 10.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 09:36:47 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 19ms (Views: 10.7ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "login" varchar(255), "password" varchar(255), "email" varchar(255), "is_employee" boolean, "created_at" datetime, "updated_at" datetime, "created_by" integer, "update_by" integer) 
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35mSQL (1.0ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36mSQL (1.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151109113229')[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20151109112251')
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20151109113115')[0m
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 09:37:55 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (10.1ms)
+Rendered users/new.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 21ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-11-09 09:38:04 -0200
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"name"=>"admin", "login"=>"admin", "password"=>"[FILTERED]", "email"=>"admin@gmail.com", "is_employee"=>"1"}, "commit"=>"Create User"}
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "login", "password", "email", "is_employee", "created_at", "updated_at", "created_by", "update_by") VALUES ('admin', 'admin', '123456', 'admin@gmail.com', 't', '2015-11-09 11:38:04.319584', '2015-11-09 11:38:04.319584', NULL, NULL)[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 16ms
+
+
+Started GET "/users/2" for 127.0.0.1 at 2015-11-09 09:38:04 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/show.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 20ms (Views: 10.6ms | ActiveRecord: 0.6ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY users.id DESC LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "updated_at" = '2015-11-09 11:38:19.565782' WHERE "users"."id" = 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY users.id DESC LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "updated_at" = '2015-11-09 11:39:16.400201' WHERE "users"."id" = 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "created_by" = 2, "updated_at" = '2015-11-09 11:41:20.734644' WHERE "users"."id" = 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "update_by" = 2, "updated_at" = '2015-11-09 12:00:14.335654' WHERE "users"."id" = 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mAREL (0.6ms)[0m  [1mUPDATE "users" SET "update_by" = NULL, "updated_at" = '2015-11-09 12:00:42.280343' WHERE "users"."id" = 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "writer" varchar(255), "pages" integer, "book_binding" integer, "copies" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109120224')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:03:12 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 20ms (Views: 4.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 10:03:13 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (37.5ms)
+Rendered books/new.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 10:03:32 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"Teste", "writer"=>"Teste", "pages"=>"123", "book_binding"=>"1", "copies"=>"12323"}, "commit"=>"Create Book"}
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.2ms)[0m  [1mINSERT INTO "books" ("title", "writer", "pages", "book_binding", "copies", "created_at", "updated_at") VALUES ('Teste', 'Teste', 123, 1, 12323, '2015-11-09 12:03:32.301011', '2015-11-09 12:03:32.301011')[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 21ms
+
+
+Started GET "/books/1" for 127.0.0.1 at 2015-11-09 10:03:32 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 1 LIMIT 1
+Rendered books/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 15ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "books" ADD "created_by" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109120358')
+Migrating to AddUpdateByToBook (20151109120402)
+  [1m[36mSQL (0.2ms)[0m  [1mALTER TABLE "books" ADD "update_by" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109120402')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "books" SET "created_by" = 1, "updated_at" = '2015-11-09 12:05:03.234450' WHERE "books"."id" = 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "queue_of_books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109121045')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("queue_of_books")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mALTER TABLE "queue_of_books" ADD "created_by" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109121342')
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+  [1m[36mSQL (0.2ms)[0m  [1mALTER TABLE "queue_of_books" ADD "update_by" integer[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109121348')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("queue_of_books")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "loans" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "book_id" integer, "user_id" integer, "starts_at" date, "end_at" date, "created_by" integer, "update_by" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20151109121527')
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("loans")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("queue_of_books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("loans")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("queue_of_books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2015-11-09 10:17:12 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 1 LIMIT 1
+Rendered books/show.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 49ms (Views: 11.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:17:15 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 33ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:21:37 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 35ms (Views: 10.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:23:12 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 34ms (Views: 10.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:23:45 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 31ms (Views: 10.2ms | ActiveRecord: 0.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/pages/index" for 127.0.0.1 at 2015-11-09 10:29:03 -0200
+
+ActionController::RoutingError (No route matches "/pages/index"):
+  
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/pages/" for 127.0.0.1 at 2015-11-09 10:29:32 -0200
+
+ActionController::RoutingError (No route matches "/pages"):
+  
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/pages/" for 127.0.0.1 at 2015-11-09 10:29:51 -0200
+
+ActionController::RoutingError (No route matches "/pages"):
+  
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/pages/" for 127.0.0.1 at 2015-11-09 10:30:27 -0200
+
+ActionController::RoutingError (No route matches "/pages"):
+  
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:30:30 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 4.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:30:40 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:31:44 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:31:49 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:32:59 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/new" for 127.0.0.1 at 2015-11-09 10:33:00 -0200
+  Processing by LoansController#new as HTML
+Rendered loans/_form.html.erb (37.5ms)
+Rendered loans/new.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 69ms (Views: 42.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/new" for 127.0.0.1 at 2015-11-09 10:33:08 -0200
+  Processing by LoansController#new as HTML
+Rendered loans/_form.html.erb (12.0ms)
+Rendered loans/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 39ms (Views: 16.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:34:01 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 4ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/new" for 127.0.0.1 at 2015-11-09 10:34:02 -0200
+  Processing by LoansController#new as HTML
+Rendered loans/_form.html.erb (11.7ms)
+Rendered loans/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 43ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 10:34:04 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (9.7ms)
+Rendered books/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 36ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 10:34:05 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (9.7ms)
+Rendered users/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 46ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/new" for 127.0.0.1 at 2015-11-09 10:34:07 -0200
+  Processing by LoansController#new as HTML
+Rendered loans/_form.html.erb (12.5ms)
+Rendered loans/new.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 40ms (Views: 17.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 10:34:09 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (10.0ms)
+Rendered books/new.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 36ms (Views: 14.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 10:34:10 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (12.9ms)
+Rendered users/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 35ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/new" for 127.0.0.1 at 2015-11-09 10:34:13 -0200
+  Processing by LoansController#new as HTML
+Rendered loans/_form.html.erb (12.9ms)
+Rendered loans/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 41ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 10:34:15 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (9.0ms)
+Rendered books/new.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 39ms (Views: 13.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 10:34:17 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (9.8ms)
+Rendered users/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 30ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:36:11 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:36:50 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:36:52 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 48ms (Views: 11.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:37:13 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 39ms (Views: 16.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 10:37:14 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mLoan Load (0.3ms)[0m  [1mSELECT "loans".* FROM "loans"[0m
+Rendered loans/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 30ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 10:37:15 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered users/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 41ms (Views: 20.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 10:37:18 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mLoan Load (0.4ms)[0m  [1mSELECT "loans".* FROM "loans"[0m
+Rendered loans/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 10:37:18 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered users/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 33ms (Views: 16.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 10:37:31 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (4.0ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 32ms (Views: 12.3ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 10:37:46 -0200
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 32ms (Views: 17.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:37:49 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 35ms (Views: 12.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 10:37:50 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mLoan Load (0.3ms)[0m  [1mSELECT "loans".* FROM "loans"[0m
+Rendered loans/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 5.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 10:37:50 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 27ms (Views: 11.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:37:51 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 34ms (Views: 11.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:39:10 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans/new" for 127.0.0.1 at 2015-11-09 10:39:12 -0200
+  Processing by LoansController#new as HTML
+Rendered loans/_form.html.erb (12.4ms)
+Rendered loans/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 77ms (Views: 19.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:39:17 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 10:39:19 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (10.4ms)
+Rendered books/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 42ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:39:21 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 5ms (Views: 5.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 10:39:23 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (9.2ms)
+Rendered users/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 31ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:39:26 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:39:27 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (11.1ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 48ms (Views: 15.5ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:41:04 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 40ms (Views: 16.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:41:52 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 33ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:42:07 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 33ms (Views: 11.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 10:42:08 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (10.1ms)
+Rendered books/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 37ms (Views: 15.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:42:15 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.7ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (7.7ms)
+Completed 500 Internal Server Error in 34ms
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"books"}):
+    5: <% end %>
+    6: 
+    7: 
+    8: <%= link_to edit_book_path do %>
+    9: 	Editar
+    10: <% end %>
+    11: 
+  app/views/books/index.html.erb:8:in `_app_views_books_index_html_erb___2644840039629362275_2159923520_1788045276479265773'
+  app/controllers/books_controller.rb:7:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.2ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:42:32 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionView::Template::Error (undefined local variable or method `update_book_path' for #<#<Class:0x00000102473058>:0x000001024721d0>):
+    5: <% end %>
+    6: 
+    7: 
+    8: <%= link_to update_book_path do %>
+    9: 	Editar
+    10: <% end %>
+    11: 
+  app/views/books/index.html.erb:8:in `_app_views_books_index_html_erb___2644840039629362275_2166588200_1788045276479265773'
+  app/controllers/books_controller.rb:7:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:42:38 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 27ms
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"books"}):
+    5: <% end %>
+    6: 
+    7: 
+    8: <%= link_to edit_book_path do %>
+    9: 	Editar
+    10: <% end %>
+    11: 
+  app/views/books/index.html.erb:8:in `_app_views_books_index_html_erb___2644840039629362275_2164615380_1788045276479265773'
+  app/controllers/books_controller.rb:7:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 10:43:45 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:43:47 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 33ms (Views: 12.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:50:17 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 32ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:50:21 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 34ms (Views: 11.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 10:50:22 -0200
+  Processing by LoansController#index as HTML
+  [1m[35mLoan Load (9.1ms)[0m  SELECT "loans".* FROM "loans"
+Rendered loans/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 50ms (Views: 16.1ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:50:27 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.7ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 34ms (Views: 11.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:50:28 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 34ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 10:50:31 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mLoan Load (0.3ms)[0m  [1mSELECT "loans".* FROM "loans"[0m
+Rendered loans/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 30ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 10:50:34 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (5.3ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 46ms (Views: 23.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:50:40 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 33ms (Views: 11.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:53:58 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 31ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:54:00 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 31ms (Views: 11.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:54:01 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books"
+Rendered books/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 31ms (Views: 10.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:54:02 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 32ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:55:15 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed 500 Internal Server Error in 22ms
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `page' for #<Class:0x00000107082660>):
+  app/controllers/books_controller.rb:6:in `index'
+
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:55:36 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed 500 Internal Server Error in 20ms
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+NoMethodError (undefined method `page' for #<Class:0x0000010490bdc0>):
+  app/controllers/books_controller.rb:6:in `index'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:55:46 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Completed 500 Internal Server Error in 22ms
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+
+NoMethodError (undefined method `page' for #<Class:0x000001025d2a98>):
+  app/controllers/books_controller.rb:5:in `index'
+
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:55:50 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Completed 500 Internal Server Error in 21ms
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+
+NoMethodError (undefined method `page' for #<Class:0x000001022bbd28>):
+  app/controllers/books_controller.rb:6:in `index'
+
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.1ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:56:28 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 10
+Completed 500 Internal Server Error in 34ms
+
+NameError (undefined local variable or method `page' for #<ActiveRecord::Relation:0x00000106ac9bd8>):
+  app/controllers/books_controller.rb:6:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.5ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:56:40 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 10[0m
+Completed 500 Internal Server Error in 26ms
+
+NameError (undefined local variable or method `page' for #<ActiveRecord::Relation:0x000001069621f0>):
+  app/controllers/books_controller.rb:6:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:57:10 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.6ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 25 OFFSET 0[0m
+Rendered books/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 56ms (Views: 13.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 10:57:19 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.4ms)[0m  SELECT "books".* FROM "books" LIMIT 25 OFFSET 0
+Rendered books/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 45ms (Views: 23.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books?page=1" for 127.0.0.1 at 2015-11-09 10:57:38 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 25 OFFSET 0[0m
+Rendered books/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 34ms (Views: 11.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books?page=2" for 127.0.0.1 at 2015-11-09 10:57:41 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 25 OFFSET 25
+Rendered books/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 28ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books?page=1" for 127.0.0.1 at 2015-11-09 10:57:43 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 25 OFFSET 0[0m
+Rendered books/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 35ms (Views: 12.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books?page=1" for 127.0.0.1 at 2015-11-09 10:59:23 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[35mBook Load (0.8ms)[0m  SELECT "books".* FROM "books" LIMIT 25 OFFSET 0
+Rendered books/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 71ms (Views: 22.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books?page=1" for 127.0.0.1 at 2015-11-09 10:59:38 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 25 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (20.7ms)
+Completed 200 OK in 45ms (Views: 23.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 10:59:52 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (53.7ms)
+Rendered books/new.html.erb within layouts/application (61.2ms)
+Completed 200 OK in 97ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 10:59:58 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"Teste2ac", "writer"=>"TEste23", "pages"=>"", "book_binding"=>"", "copies"=>""}, "commit"=>"Create Book"}
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (7.6ms)[0m  INSERT INTO "books" ("title", "writer", "pages", "book_binding", "copies", "created_at", "updated_at", "created_by", "update_by") VALUES ('Teste2ac', 'TEste23', NULL, NULL, NULL, '2015-11-09 12:59:58.588963', '2015-11-09 12:59:58.588963', NULL, NULL)
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 44ms
+
+
+Started GET "/books/2" for 127.0.0.1 at 2015-11-09 10:59:58 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.9ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 2 LIMIT 1[0m
+Rendered books/show.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 50ms (Views: 22.9ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:00:00 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (1.2ms)[0m  SELECT "books".* FROM "books" LIMIT 25 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 37ms (Views: 13.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:00:02 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (1.3ms)[0m  SELECT "books".* FROM "books" LIMIT 25 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 41ms (Views: 14.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:00:25 -0200
+
+ActionController::RoutingError (undefined method `paginates_per' for ApplicationController:Class):
+  app/controllers/application_controller.rb:4:in `<class:ApplicationController>'
+  app/controllers/application_controller.rb:1:in `<top (required)>'
+  app/controllers/books_controller.rb:1:in `<top (required)>'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:00:58 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 56ms (Views: 31.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books?page=2" for 127.0.0.1 at 2015-11-09 11:01:00 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mBook Load (1.1ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 47ms (Views: 22.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:01:02 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (18.9ms)
+Completed 200 OK in 44ms (Views: 21.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books?page=2" for 127.0.0.1 at 2015-11-09 11:01:04 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mBook Load (1.0ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 48ms (Views: 20.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:01:06 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 44ms (Views: 21.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books?page=2" for 127.0.0.1 at 2015-11-09 11:01:07 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mBook Load (1.0ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 43ms (Views: 19.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:01:20 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 46ms (Views: 20.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 11:01:34 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (10.6ms)
+Rendered books/new.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 44ms (Views: 20.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 11:01:38 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"Teste123123", "writer"=>"TEste123132132", "pages"=>"", "book_binding"=>"", "copies"=>""}, "commit"=>"Create Book"}
+  [1m[35mAREL (0.2ms)[0m  INSERT INTO "books" ("title", "writer", "pages", "book_binding", "copies", "created_at", "updated_at", "created_by", "update_by") VALUES ('Teste123123', 'TEste123132132', NULL, NULL, NULL, '2015-11-09 13:01:38.646524', '2015-11-09 13:01:38.646524', NULL, NULL)
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 33ms
+
+
+Started GET "/books/3" for 127.0.0.1 at 2015-11-09 11:01:38 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.8ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 3 LIMIT 1[0m
+Rendered books/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 41ms (Views: 12.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:01:40 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 49ms (Views: 26.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books?page=2" for 127.0.0.1 at 2015-11-09 11:01:41 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mBook Load (1.2ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (26.3ms)
+Completed 200 OK in 51ms (Views: 28.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books?page=3" for 127.0.0.1 at 2015-11-09 11:01:43 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35mBook Load (1.2ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 2
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 45ms (Views: 23.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books?page=2" for 127.0.0.1 at 2015-11-09 11:01:44 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mBook Load (1.1ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 49ms (Views: 25.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:01:45 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 43ms (Views: 22.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books?page=3" for 127.0.0.1 at 2015-11-09 11:01:46 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35mBook Load (1.1ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 2
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 44ms (Views: 21.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:01:47 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 49ms (Views: 23.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 11:01:58 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (12.2ms)
+Rendered books/new.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 45ms (Views: 18.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:02:00 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 45ms (Views: 22.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 11:03:01 -0200
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:04:05 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 41ms (Views: 21.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books?page=2" for 127.0.0.1 at 2015-11-09 11:05:22 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mBook Load (1.0ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 53ms (Views: 26.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books?page=3" for 127.0.0.1 at 2015-11-09 11:05:24 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35mBook Load (1.0ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 2
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 47ms (Views: 23.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 11:05:24 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (9.6ms)
+Rendered books/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 39ms (Views: 16.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 11:07:52 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (9.1ms)
+Rendered books/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 37ms (Views: 14.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 11:08:07 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (9.0ms)
+Rendered books/new.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 40ms (Views: 15.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 11:08:17 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (10.0ms)
+Rendered books/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 37ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 11:10:51 -0200
+  Processing by BooksController#new as HTML
+Rendered books/_form.html.erb (11.1ms)
+Rendered books/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 41ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 11:10:52 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"", "writer"=>"", "pages"=>"", "copies"=>"", "book_binding"=>""}, "commit"=>"Create Book"}
+Rendered books/_form.html.erb (12.1ms)
+Rendered books/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 54ms (Views: 18.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 11:11:03 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"", "writer"=>"", "pages"=>"", "copies"=>"", "book_binding"=>""}, "commit"=>"Create Book"}
+Rendered books/_form.html.erb (11.6ms)
+Rendered books/new.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 54ms (Views: 18.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 11:12:29 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"", "writer"=>"", "pages"=>"", "copies"=>"", "book_binding"=>""}, "commit"=>"Create Book"}
+Rendered books/_form.html.erb (11.1ms)
+Rendered books/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 52ms (Views: 17.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 11:12:40 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd", "writer"=>"", "pages"=>"", "copies"=>"", "book_binding"=>""}, "commit"=>"Create Book"}
+Rendered books/_form.html.erb (11.4ms)
+Rendered books/new.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 55ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 11:12:59 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"asdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasdasd", "writer"=>"", "pages"=>"", "copies"=>"", "book_binding"=>""}, "commit"=>"Create Book"}
+Rendered books/_form.html.erb (12.5ms)
+Rendered books/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 64ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 11:13:53 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 33ms (Views: 14.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 11:13:55 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (12.5ms)
+Rendered users/new.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 41ms (Views: 23.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 11:14:50 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (8.8ms)
+Rendered users/new.html.erb within layouts/application (18.7ms)
+Completed 500 Internal Server Error in 42ms
+
+ActionView::Template::Error (undefined local variable or method `current_user' for #<#<Class:0x00000101108090>:0x000001010f5af8>):
+    2: 
+    3: <%= render 'form' %>
+    4: 
+    5: <% current_user %>
+    6: <%= link_to 'Back', users_path %>
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb___2535184958363451214_2156614740_2150368584792552845'
+  app/controllers/users_controller.rb:26:in `new'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 11:14:55 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (11.5ms)
+Rendered users/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 31ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+Migrating to AddDeviseToUsers (20151109131916)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1mALTER TABLE "users" ADD "email" varchar(255) DEFAULT '' NOT NULL[0m
+SQLite3::SQLException: duplicate column name: email: ALTER TABLE "users" ADD "email" varchar(255) DEFAULT '' NOT NULL
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+Migrating to AddDeviseToUsers (20151109131916)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "email" varchar(255) DEFAULT '' NOT NULL[0m
+SQLite3::SQLException: duplicate column name: email: ALTER TABLE "users" ADD "email" varchar(255) DEFAULT '' NOT NULL
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+Migrating to AddDeviseToUsers (20151109131916)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.5ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "login" varchar(255), "password" varchar(255), "email" varchar(255), "is_employee" boolean, "created_at" datetime, "updated_at" datetime, "created_by" integer, "update_by" integer) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (16.0ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "login" varchar(255), "password" varchar(255), "email" varchar(255) DEFAULT '' NOT NULL, "is_employee" boolean, "created_at" datetime, "updated_at" datetime, "created_by" integer, "update_by" integer) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.3ms)[0m  DROP TABLE "altered_users"
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "encrypted_password" varchar(128) DEFAULT '' NOT NULL[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "reset_password_token" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "reset_password_sent_at" varchar(255)[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "remember_created_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "current_sign_in_at" datetime
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "last_sign_in_at" datetime[0m
+  [1m[35mSQL (0.1ms)[0m  ALTER TABLE "users" ADD "current_sign_in_ip" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "last_sign_in_ip" varchar(255)[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35mSQL (0.1ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20151109131916')[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("loans")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("queue_of_books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 11:29:47 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (22.4ms)
+Rendered users/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2015-11-09 11:29:47 -0200
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (14.4ms)
+Rendered users/new.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 41ms (Views: 21.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 11:29:52 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mLoan Load (0.3ms)[0m  [1mSELECT "loans".* FROM "loans"[0m
+Rendered loans/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 52ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:29:53 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 57ms (Views: 27.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:29:58 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 53ms (Views: 27.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:30:48 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 52ms (Views: 25.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:31:22 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 53ms (Views: 24.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 11:33:39 -0200
+  Processing by BooksController#index as HTML
+Completed 401 Unauthorized in 18ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:33:39 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.0ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 43ms (Views: 12.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 11:34:08 -0200
+  Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 18ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:34:08 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.2ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 46ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:35:14 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.0ms)
+ERROR: compiling _app_views_layouts_application_html_erb___177010563488931564_2174789920__4114558523069677804 RAISED /Users/getttecnologia/Works/library_system/app/views/layouts/application.html.erb:46: syntax error, unexpected keyword_ensure, expecting end-of-input
+Function body:           def _app_views_layouts_application_html_erb___177010563488931564_2174789920__4114558523069677804(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "layouts/application";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<!DOCTYPE html>
+<html>
+<head>
+	<title>LibrarySystem</title>
+	');@output_buffer.append= ( stylesheet_link_tag :all );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( javascript_include_tag :defaults );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('	');@output_buffer.append= ( csrf_meta_tag );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</head>
+<body>
+
+');	 user_signed_in? 
+@output_buffer.safe_concat('		<div id="main-nav">
+			<ul>
+				<li>
+					');@output_buffer.append=  link_to root_path do@output_buffer.safe_concat('
+');@output_buffer.safe_concat('						Home
+');					 end 
+@output_buffer.safe_concat('				</li>
+				<li>
+					');@output_buffer.append=  link_to books_path do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('						Livros
+');					 end 
+@output_buffer.safe_concat('				</li>
+				<li>
+					');@output_buffer.append=  link_to loans_path do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('						Empréstimos
+');					 end 
+@output_buffer.safe_concat('				</li>
+				<li>
+					');@output_buffer.append=  link_to users_path do @output_buffer.safe_concat('
+');@output_buffer.safe_concat('						Usuários
+');					 end 
+@output_buffer.safe_concat('				</li>
+				<li>
+					Meu usuário
+				</li>
+			</ul>
+		</div>
+');	 end 
+@output_buffer.safe_concat('
+');@output_buffer.append= ( yield );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('
+</body>
+</html>
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `module_eval'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_view/template.rb:258:in `compile'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_view/template.rb:134:in `block in render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/notifications.rb:54:in `instrument'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_view/template.rb:127:in `render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_view/render/layouts.rb:80:in `_render_layout'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:62:in `block in _render_template'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_view/render/rendering.rb:26:in `render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:115:in `_render_template'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:109:in `render_to_body'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:102:in `render_to_string'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:93:in `render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:17:in `render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activerecord-3.0.9/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/lib/devise/controllers/scoped_views.rb:28:in `render_with_scope'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/controllers/devise/sessions_controller.rb:10:in `block in new'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/responder.rb:190:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/responder.rb:190:in `default_render'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/responder.rb:126:in `to_html'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/responder.rb:119:in `respond'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/responder.rb:112:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/mime_responds.rb:232:in `respond_with'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/lib/devise/controllers/internal_helpers.rb:148:in `respond_with_navigational'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/controllers/devise/sessions_controller.rb:10:in `new'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:150:in `process_action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:451:in `_run__1721857128055532783__process_action__2683676606011013295__callbacks'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:410:in `_run_process_action_callbacks'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:94:in `run_callbacks'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `block in instrument'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/notifications.rb:52:in `instrument'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/base.rb:119:in `process'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/abstract_controller/rendering.rb:41:in `process'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal.rb:138:in `dispatch'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_controller/metal.rb:178:in `block in action'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/routing/mapper.rb:39:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:148:in `block in call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-mount-0.6.14/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-mount-0.6.14/lib/rack/mount/route_set.rb:139:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/routing/route_set.rb:493:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/warden-1.2.3/lib/warden/manager.rb:35:in `block in call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/warden-1.2.3/lib/warden/manager.rb:34:in `catch'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/warden-1.2.3/lib/warden/manager.rb:34:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-1.2.8/lib/rack/methodoverride.rb:24:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/cookies.rb:302:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:32:in `block in call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:12:in `cache'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activerecord-3.0.9/lib/active_record/query_cache.rb:31:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activerecord-3.0.9/lib/active_record/connection_adapters/abstract/connection_pool.rb:354:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:46:in `block in call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/callbacks.rb:416:in `_run_call_callbacks'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-1.2.8/lib/rack/sendfile.rb:106:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/railties-3.0.9/lib/rails/rack/logger.rb:13:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-1.2.8/lib/rack/runtime.rb:17:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/activesupport-3.0.9/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-1.2.8/lib/rack/lock.rb:13:in `block in call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-1.2.8/lib/rack/lock.rb:13:in `synchronize'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-1.2.8/lib/rack/lock.rb:13:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/railties-3.0.9/lib/rails/application.rb:168:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/railties-3.0.9/lib/rails/application.rb:77:in `method_missing'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/railties-3.0.9/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-1.2.8/lib/rack/content_length.rb:13:in `call'
+/Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/rack-1.2.8/lib/rack/handler/webrick.rb:52:in `service'
+/Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+/Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+/Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (21.6ms)
+Completed 500 Internal Server Error in 55ms
+
+ActionView::Template::Error (/Users/getttecnologia/Works/library_system/app/views/layouts/application.html.erb:46: syntax error, unexpected keyword_ensure, expecting end-of-input):
+    43: </body>
+    44: </html>
+  
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.9ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:35:46 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 44ms (Views: 11.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:35:53 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 45ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:36:08 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 38ms (Views: 10.5ms | ActiveRecord: 0.0ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:37:04 -0200
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"email"=>"gt.katakura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (6.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'gt.katakura@gmail.com' LIMIT 1[0m
+Completed 401 Unauthorized in 62ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"email"=>"gt.katakura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.0ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 98ms (Views: 10.8ms | ActiveRecord: 6.9ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:37:45 -0200
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"email"=>"gt.katakura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'gt.katakura@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 37ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"email"=>"gt.katakura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.3ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 95ms (Views: 12.3ms | ActiveRecord: 1.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 11:42:44 -0200
+  Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:42:44 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 55ms (Views: 20.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-11-09 11:42:59 -0200
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"email"=>"gt.katakura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (6.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'gt.katakura@gmail.com' LIMIT 1
+Completed 401 Unauthorized in 96ms
+  Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"email"=>"gt.katakura@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.1ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 89ms (Views: 12.3ms | ActiveRecord: 6.3ms)
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'gt.katakura@gmail.com'[0m
+  [1m[35mUser Load (3.7ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (25.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+WARNING: Can't mass-assign protected attributes: name
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'admin@gmail.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+WARNING: Can't mass-assign protected attributes: name
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'admin@gmail.com') LIMIT 1
+  [1m[36mUser Load (11.5ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.9ms)[0m  [1mDELETE FROM "users" WHERE "users"."id" = 1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = 2
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+WARNING: Can't mass-assign protected attributes: name
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'admin@gmail.com') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "login", "password", "email", "is_employee", "created_at", "updated_at", "created_by", "update_by", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip") VALUES (NULL, NULL, NULL, 'admin@gmail.com', NULL, '2015-11-09 13:48:51.980584', '2015-11-09 13:48:51.980584', NULL, NULL, '$2a$10$VM21ddvUl/trY5CKP9vYK.mHD/j81IjQQv4YvSmqybtVjH27vp8oe', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+Migrating to AddDeviseToUsers (20151109131916)
+Migrating to RemovePasswordFromUser (20151109135046)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20151109135046')[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("loans")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("queue_of_books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to RemovePasswordFromUser (20151109135046)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "password" varchar(255)[0m
+SQLite3::SQLException: duplicate column name: password: ALTER TABLE "users" ADD "password" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+Migrating to AddDeviseToUsers (20151109131916)
+Migrating to RemovePasswordFromUser (20151109135046)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("loans")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("queue_of_books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+Migrating to AddDeviseToUsers (20151109131916)
+Migrating to RemovePasswordFromUser (20151109135046)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("loans")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("queue_of_books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+Migrating to AddDeviseToUsers (20151109131916)
+Migrating to RemovePasswordFromUser (20151109135046)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("books")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("loans")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("queue_of_books")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_reset_password_token')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to RemovePasswordFromUser (20151109135046)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1mALTER TABLE "users" ADD "password" varchar(255)[0m
+SQLite3::SQLException: duplicate column name: password: ALTER TABLE "users" ADD "password" varchar(255)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to RemovePasswordFromUser (20151109135046)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20151109135046'[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("books")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("loans")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("queue_of_books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151109112251)
+Migrating to AddCreatedByToUser (20151109113115)
+Migrating to AddUpdateByToUser (20151109113229)
+Migrating to CreateBooks (20151109120224)
+Migrating to AddCreatedByToBook (20151109120358)
+Migrating to AddUpdateByToBook (20151109120402)
+Migrating to CreateQueueOfBooks (20151109121045)
+Migrating to AddCreatedByToQueueOfBooks (20151109121342)
+Migrating to AddUpdateByToQueueOfBooks (20151109121348)
+Migrating to CreateLoans (20151109121527)
+Migrating to AddDeviseToUsers (20151109131916)
+Migrating to RemovePasswordFromUser (20151109135046)
+  [1m[35mSQL (0.0ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "login" varchar(255), "password" varchar(255), "email" varchar(255) DEFAULT '' NOT NULL, "is_employee" boolean, "created_at" datetime, "updated_at" datetime, "created_by" integer, "update_by" integer, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.3ms)[0m  CREATE UNIQUE INDEX "temp_index_altered_users_on_reset_password_token" ON "altered_users" ("reset_password_token")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('temp_index_altered_users_on_reset_password_token')
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE UNIQUE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")[0m
+  [1m[35mSQL (0.3ms)[0m  DROP TABLE "users"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "login" varchar(255), "email" varchar(255) DEFAULT '' NOT NULL, "is_employee" boolean, "created_at" datetime, "updated_at" datetime, "created_by" integer, "update_by" integer, "encrypted_password" varchar(128) DEFAULT '' NOT NULL, "reset_password_token" varchar(255), "reset_password_sent_at" varchar(255), "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar(255), "last_sign_in_ip" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('temp_index_altered_users_on_email')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('temp_index_altered_users_on_reset_password_token')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_users"
+  [1m[36mSQL (2.7ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20151109135046')[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("loans")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("queue_of_books")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_reset_password_token')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = 3
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+WARNING: Can't mass-assign protected attributes: name
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'admin@gmail.com') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "login", "email", "is_employee", "created_at", "updated_at", "created_by", "update_by", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip") VALUES (NULL, NULL, 'admin@gmail.com', NULL, '2015-11-09 13:54:27.775880', '2015-11-09 13:54:27.775880', NULL, NULL, '$2a$10$nKzyMx5FfY7Fisg9kPorEOdW8R5Dr2B4DdTCQX0o6/HLze8IHjq3y', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "users" WHERE "users"."id" = 4
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'admin@gmail.com') LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mINSERT INTO "users" ("name", "login", "email", "is_employee", "created_at", "updated_at", "created_by", "update_by", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip") VALUES ('admin', NULL, 'admin@gmail.com', NULL, '2015-11-09 13:55:38.201860', '2015-11-09 13:55:38.201860', NULL, NULL, '$2a$10$C7gnD0sZTvfczSk/3NyLf.PFISz1silwxIIBwh.sM5Gl8CqxW2Ehy', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL)[0m
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 12:06:08 -0200
+  Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-11-09 12:06:08 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.2ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 52ms (Views: 18.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-11-09 12:06:16 -0200
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "user"=>{"email"=>"admin@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (2.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'admin@gmail.com' LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "remember_created_at" = '2015-11-09 14:06:16.243162', "updated_at" = '2015-11-09 14:06:16.243433' WHERE "users"."id" = 5[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2015-11-09 14:06:16.275423', "current_sign_in_at" = '2015-11-09 14:06:16.275423', "last_sign_in_ip" = '127.0.0.1', "current_sign_in_ip" = '127.0.0.1', "sign_in_count" = 1, "updated_at" = '2015-11-09 14:06:16.275795' WHERE "users"."id" = 5
+Redirected to http://localhost:3000/home
+Completed 302 Found in 214ms
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 12:06:16 -0200
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered pages/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 47ms (Views: 13.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 12:06:31 -0200
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered pages/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 36ms (Views: 6.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/loans/new" for 127.0.0.1 at 2015-11-09 12:06:33 -0200
+  Processing by LoansController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered loans/_form.html.erb (19.9ms)
+Rendered loans/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 76ms (Views: 28.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 12:09:09 -0200
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered pages/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 61ms (Views: 28.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 12:09:32 -0200
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (6.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered pages/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 50ms (Views: 7.1ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 12:09:33 -0200
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered pages/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 41ms (Views: 7.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 12:09:45 -0200
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered pages/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 36ms (Views: 6.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/home" for 127.0.0.1 at 2015-11-09 12:09:53 -0200
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered pages/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 33ms (Views: 6.0ms | ActiveRecord: 0.9ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 1[0m
+  [1m[35mBook Load (0.6ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mBook Load (0.5ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 2[0m
+  [1m[35mBook Load (0.5ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 3[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 12:19:17 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 1 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 77ms (Views: 27.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 12:19:19 -0200
+  Processing by BooksController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+Rendered books/_form.html.erb (20.4ms)
+Rendered books/new.html.erb within layouts/application (32.7ms)
+Completed 200 OK in 83ms (Views: 45.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-09 12:19:29 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1hAzLXuiEQ1XyfkcKcEyX6r5b9teRTgyPii6VuTJ79Q=", "book"=>{"title"=>"123asd", "writer"=>"asdsdfg123", "pages"=>"123", "copies"=>"asdd", "book_binding"=>"12"}, "commit"=>"Create Book"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Completed 500 Internal Server Error in 57ms
+
+NameError (undefined local variable or method `current_user' for #<Book:0x000001020426a0>):
+  app/models/concerns/created_by.rb:15:in `set_created_by'
+  app/controllers/books_controller.rb:43:in `block in create'
+  app/controllers/books_controller.rb:42:in `create'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 14:14:00 -0200
+  Processing by UsersController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 74ms (Views: 24.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/index" for 127.0.0.1 at 2015-11-09 14:14:00 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"index"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 0 LIMIT 1[0m
+Completed 404 Not Found in 30ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=index):
+  app/controllers/users_controller.rb:13:in `show'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.8ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/users/" for 127.0.0.1 at 2015-11-09 14:14:08 -0200
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 38ms (Views: 6.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 14:14:11 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mBook Load (11.1ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 25 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 83ms (Views: 25.5ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 14:14:17 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mLoan Load (0.3ms)[0m  SELECT "loans".* FROM "loans"
+Rendered loans/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 54ms (Views: 6.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 14:14:17 -0200
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 41ms (Views: 8.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 14:14:19 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mLoan Load (0.1ms)[0m  SELECT "loans".* FROM "loans"
+Rendered loans/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 46ms (Views: 5.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 14:14:19 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" LIMIT 25 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 50ms (Views: 9.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 14:14:44 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 25 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 50ms (Views: 12.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-09 14:14:46 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mLoan Load (0.1ms)[0m  SELECT "loans".* FROM "loans"
+Rendered loans/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 42ms (Views: 5.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2015-11-09 14:14:47 -0200
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 38ms (Views: 7.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-09 14:14:48 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" LIMIT 25 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 53ms (Views: 11.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-09 14:14:49 -0200
+  Processing by BooksController#new as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 5 LIMIT 1
+Rendered books/_form.html.erb (65.3ms)
+Rendered books/new.html.erb within layouts/application (86.4ms)
+Completed 200 OK in 136ms (Views: 95.8ms | ActiveRecord: 1.1ms)

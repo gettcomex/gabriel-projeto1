@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  book: 
+  user: 
+  starts_at: 2015-11-09
+  end_at: 2015-11-09
+  created_by: 1
+  update_by: 1
+
+two:
+  book: 
+  user: 
+  starts_at: 2015-11-09
+  end_at: 2015-11-09
+  created_by: 1
+  update_by: 1

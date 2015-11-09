@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  writer: MyString
+  pages: 1
+  book_binding: 1
+  copies: 1
+
+two:
+  title: MyString
+  writer: MyString
+  pages: 1
+  book_binding: 1
+  copies: 1
