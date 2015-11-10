@@ -5,10 +5,10 @@ class BooksController < ApplicationController
 		respond_with @books
 	end
 
-	# def show
-	# 	@book = Book.find(params[:id])
-	# 	respond_with @book
-	# end
+	def show
+		@book = Book.find(params[:id])
+		respond_with @book
+	end
 
 	def new
 		@book = Book.new

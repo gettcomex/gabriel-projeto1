@@ -12,26 +12,18 @@
 		<div id="main-nav">
 			<ul>
 				<li>
-					<%= link_to root_path do%>
-						Home
-					<% end %>
+					<%= link_to 'Home', root_path %>
 				</li>
 				<li>
-					<%= link_to books_path do %>
-						Livros
-					<% end %>
+					<%= link_to 'Livros', books_path %>
 				</li>
 				<li>
-					<%= link_to loans_path do %>
-						Empréstimos
-					<% end %>
+					<%= link_to 'Empréstimos', loans_path %>
 				</li>
 				
 				<% if current_user.is_employee %>
 					<li>
-						<%= link_to users_path do %>
-							Usuários
-						<% end %>
+						<%= link_to 'Usuários', users_path %>
 					</li>
 				<% end %>
 				

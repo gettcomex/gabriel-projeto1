@@ -1,0 +1,45 @@
+"pt-BR":
+  empty: "Não temos nenhum %{model} ainda."
+  confirm: Tem certeza?
+  edit: Editar
+  destroy: Apagar
+  cancel: Cancelar
+  error_message_header: "%{count} erro(s) impediram este %{model} de ser gravado:"
+  new: Criar
+  new_model: Criar %{model}
+  show: Exibir
+  back: Voltar
+
+  books:
+    new:
+        book_binding:
+          bound: Encadernado
+          unbound: Não encadernado
+
+  activerecord:
+    models:
+      book:
+        one: Livro
+        other: Livros
+      loan:
+        one: Empréstimo
+        other: Empréstimos
+      queue_of_books:
+        one: Reserva
+        other: Reservas
+      user:
+        one: Usuário
+        other: Usuários
+    attributes:
+      book:
+        title: Título
+        writer: Escritor
+        pages: Páginas
+        book_binding: Tipo
+        copies: Cópias
+  views:
+    pagination:
+      first: Primeiro
+      previous: Anterior
+      next: Próximo
+      last: Último
