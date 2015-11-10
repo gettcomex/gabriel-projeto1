@@ -26,15 +26,23 @@
 						Empréstimos
 					<% end %>
 				</li>
-				<li>
-					<%= link_to users_path do %>
-						Usuários
-					<% end %>
-				</li>
+				
+				<% if current_user.is_employee %>
+					<li>
+						<%= link_to users_path do %>
+							Usuários
+						<% end %>
+					</li>
+				<% end %>
+				
 				<li>
 					Meu usuário
 				</li>
 			</ul>
+		</div>
+
+		<div id="user-bar">
+			<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 		</div>
 	<% end %>
 

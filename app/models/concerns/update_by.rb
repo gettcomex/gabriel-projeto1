@@ -6,12 +6,12 @@ module UpdateBy
 	 		class_name: User.to_s,
 	 		foreign_key: "update_by"
 
-	 	before_create :set_update_by
+	 	before_save :add_update_by
 	end
 
-protected
+private
 
-	def set_update_by
-		self.update_by = current_user
+	def add_update_by
+		self.update_by = User.current if User.current.present?
 	end
 end

@@ -11,4 +11,4 @@ en:
     new:
         book_binding:
           bound: Bound
-          unbound: Unbound
+          unbound: UnboundF

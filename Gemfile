@@ -4,6 +4,10 @@ gem 'rails', '3.0.9'
 gem 'kaminari'
 gem 'devise'
 
+group :development, :teste do
+	gem 'byebug'
+end
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

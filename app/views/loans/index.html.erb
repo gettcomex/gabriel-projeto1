@@ -1,13 +1,13 @@
 <h1>Listing loans</h1>
 
+<%= link_to 'New', new_loan_path %>
+
 <table>
   <tr>
     <th>Book</th>
     <th>User</th>
     <th>Starts at</th>
     <th>End at</th>
-    <th>Created by</th>
-    <th>Update by</th>
     <th></th>
     <th></th>
     <th></th>
@@ -19,8 +19,6 @@
     <td><%= loan.user %></td>
     <td><%= loan.starts_at %></td>
     <td><%= loan.end_at %></td>
-    <td><%= loan.created_by %></td>
-    <td><%= loan.update_by %></td>
     <td><%= link_to 'Show', loan %></td>
     <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
     <td><%= link_to 'Destroy', loan, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -29,5 +27,3 @@
 </table>
 
 <br />
-
-<%= link_to 'New Loan', new_loan_path %>

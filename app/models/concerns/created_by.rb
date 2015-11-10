@@ -6,12 +6,13 @@ module CreatedBy
 	 		class_name: User.to_s,
 	 		foreign_key: "created_by"
 
-	 	before_create :set_created_by
+	 	before_create :add_created_by
 	end
 
-protected
+private
 
-	def set_created_by
-		self.created_by = current_user
+	def add_created_by
+		self.created_by = User.current if User.current.present?
 	end
+
 end

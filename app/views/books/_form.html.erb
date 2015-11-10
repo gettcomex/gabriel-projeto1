@@ -10,26 +10,26 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, length: 150 %>
   </div>
   <div class="field">
     <%= f.label :writer %><br />
-    <%= f.text_field :writer %>
+    <%= f.text_field :writer, length: 150 %>
   </div>
   <div class="field">
     <%= f.label :pages %><br />
-    <%= f.text_field :pages %>
+    <%= f.number_field :pages %>
   </div>
   <div class="field">
     <%= f.label :copies %><br />
-    <%= f.text_field :copies %>
+    <%= f.number_field :copies %>
   </div>
   <div class="field">
     <%= f.label :book_binding %><br />
-    <%= f.text_field :book_binding %>
+    <%= f.select :book_binding, options_for_book_binding %>
   </div>
   <div class="actions">
     <%= f.submit %>
