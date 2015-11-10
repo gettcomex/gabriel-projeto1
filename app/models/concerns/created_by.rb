@@ -7,6 +7,8 @@ module CreatedBy
 	 		foreign_key: "created_by"
 
 	 	before_create :add_created_by
+
+	 	attr_protected :created_by
 	end
 
 private

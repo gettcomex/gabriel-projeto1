@@ -15,8 +15,8 @@
 
 <% @loans.each do |loan| %>
   <tr>
-    <td><%= loan.book %></td>
-    <td><%= loan.user %></td>
+    <td><%= loan.book.title %></td>
+    <td><%= loan.user.name %></td>
     <td><%= loan.starts_at %></td>
     <td><%= loan.end_at %></td>
     <td><%= link_to 'Show', loan %></td>

@@ -7,6 +7,8 @@ module UpdateBy
 	 		foreign_key: "update_by"
 
 	 	before_save :add_update_by
+
+	 	attr_protected :update_by
 	end
 
 private
