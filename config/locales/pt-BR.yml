@@ -37,6 +37,11 @@
         pages: Páginas
         book_binding: Tipo
         copies: Cópias
+      loan:
+        book: Livro
+        user: Usuário
+        starts_at: Começa em
+        end_at: Termina em
   views:
     pagination:
       first: Primeiro

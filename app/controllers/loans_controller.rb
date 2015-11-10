@@ -1,6 +1,6 @@
 class LoansController < ApplicationController
 
-	before_filter :load_resources, only: %w(new create edit update)
+	before_filter :load_resources, only: %w(new create)
 
 	def index
 		@loans = Loan.page(params[:page])

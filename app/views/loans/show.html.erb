@@ -1,35 +1,25 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Book:</b>
-  <%= @loan.book %>
+	<b><%=t_attr_local :book %>:</b>
+	<%= @loan.book.title %>
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @loan.user %>
+	<b><%=t_attr_local :user %>:</b>
+	<%= @loan.user.name %>
 </p>
 
 <p>
-  <b>Starts at:</b>
-  <%= @loan.starts_at %>
+	<b><%=t_attr_local :starts_at %>:</b>
+	<%= @loan.starts_at %>
 </p>
 
 <p>
-  <b>End at:</b>
-  <%= @loan.end_at %>
-</p>
-
-<p>
-  <b>Created by:</b>
-  <%= @loan.created_by %>
-</p>
-
-<p>
-  <b>Update by:</b>
-  <%= @loan.update_by %>
+	<b><%=t_attr_local :end_at %>:</b>
+	<%= @loan.end_at %>
 </p>
 
 
-<%= link_to 'Edit', edit_loan_path(@loan) %> |
-<%= link_to 'Back', loans_path %>
+<%= link_to t('edit'), edit_loan_path(@loan) %> |
+<%= link_to t('back'), loans_path %>

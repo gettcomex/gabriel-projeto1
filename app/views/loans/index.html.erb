@@ -1,28 +1,27 @@
-<h1>Listing loans</h1>
+<h1><%= t_models_local %></h1>
 
-<%= link_to 'New', new_loan_path %>
+<%= link_to t('new'), new_loan_path %>
 
 <table>
-  <tr>
-    <th>Book</th>
-    <th>User</th>
-    <th>Starts at</th>
-    <th>End at</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+	<tr>
+		<th><%= t_attr_local :book %></th>
+		<th><%= t_attr_local :user %></th>
+		<th><%= t_attr_local :starts_at %></th>
+		<th><%= t_attr_local :end_at %></th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
 
 <% @loans.each do |loan| %>
-  <tr>
-    <td><%= loan.book.title %></td>
-    <td><%= loan.user.name %></td>
-    <td><%= loan.starts_at %></td>
-    <td><%= loan.end_at %></td>
-    <td><%= link_to 'Show', loan %></td>
-    <td><%= link_to 'Edit', edit_loan_path(loan) %></td>
-    <td><%= link_to 'Destroy', loan, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+	<tr>
+		<td><%= loan.book.title %></td>
+		<td><%= loan.user.name %></td>
+		<td><%= loan.starts_at %></td>
+		<td><%= loan.end_at %></td>
+		<td><%= link_to t('show'), loan %></td>
+		<td><%= link_to t('edit'), edit_loan_path(loan) %></td></td>
+	</tr>
 <% end %>
 </table>
 

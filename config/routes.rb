@@ -4,17 +4,12 @@ LibrarySystem::Application.routes.draw do
 
 	match "/home" => "pages#index", :as => :home
 
+	resources :users
 	resources :books
 	resources :loans
 	resources :queue_of_books
-	devise_for :users, :path => 'accounts'
-	resources :users
 
-	# namespace :employee do
-	# 	root to: "pages#index"
-	# 	resources :users
-	# 	devise_for :users
-	# end
+	devise_for :users, :path => 'accounts'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

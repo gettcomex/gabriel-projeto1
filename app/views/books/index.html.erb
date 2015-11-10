@@ -1,11 +1,11 @@
-<h1><%= t_models(Book) %></h1>
+<h1><%= t_models_local %></h1>
 
 <%= link_to t('new'), new_book_path %>
 
 <table>
 	<tr>
-		<th><%= t_attr Book, :title %></th>
-		<th><%= t_attr Book, :writer %></th>
+		<th><%= t_attr_local :title %></th>
+		<th><%= t_attr_local :writer %></th>
 		<th></th>
 		<th></th>
 		<th></th>

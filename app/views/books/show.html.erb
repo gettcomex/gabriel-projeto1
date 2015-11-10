@@ -1,27 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b><%=t_attr Book, :title %>:</b>
+  <b><%=t_attr_local :title %>:</b>
   <%= @book.title %>
 </p>
 
 <p>
-  <b><%=t_attr Book, :writer %>:</b>
+  <b><%=t_attr_local :writer %>:</b>
   <%= @book.writer %>
 </p>
 
 <p>
-  <b><%=t_attr Book, :pages %>:</b>
+  <b><%=t_attr_local :pages %>:</b>
   <%= @book.pages %>
 </p>
 
 <p>
-  <b><%=t_attr Book, :copies %>:</b>
+  <b><%=t_attr_local :copies %>:</b>
   <%= @book.copies %>
 </p>
 
 <p>
-  <b><%=t_attr Book, :book_binding %>:</b>
+  <b><%=t_attr_local :book_binding %>:</b>
   <%= text_by_book_binding @book.book_binding %>
 </p>
 
