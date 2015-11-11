@@ -16365,3 +16365,1500 @@ Rendered shared/_error_messages.html.erb (0.8ms)
 Rendered loans/_form.html.erb (4.6ms)
 Rendered loans/new.html.erb within layouts/application (29.2ms)
 Completed 200 OK in 121ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-11 10:43:44 -0200
+  Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered pages/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 39ms (Views: 6.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 10:43:46 -0200
+  Processing by LoansController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mLoan Load (0.3ms)[0m  [1mSELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered loans/index.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 87ms (Views: 45.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 10:44:41 -0200
+  Processing by LoansController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mLoan Load (0.3ms)[0m  [1mSELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered loans/index.html.erb within layouts/application (50.0ms)
+Completed 200 OK in 91ms (Views: 51.2ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 10:44:48 -0200
+  Processing by LoansController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered loans/index.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 94ms (Views: 48.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 10:45:33 -0200
+  Processing by LoansController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mLoan Load (0.3ms)[0m  [1mSELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered loans/index.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 86ms (Views: 43.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:45:35 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 39ms (Views: 7.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:45:56 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 38ms (Views: 7.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:46:10 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 36ms (Views: 7.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:46:35 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 45ms (Views: 8.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:46:53 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 48ms (Views: 14.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:46:54 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 41ms (Views: 9.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:47:43 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 58ms (Views: 30.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:47:44 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 39ms (Views: 8.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:48:16 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 58ms (Views: 27.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:48:23 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 44ms (Views: 7.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/9" for 127.0.0.1 at 2015-11-11 10:48:41 -0200
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 38ms (Views: 7.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/9/edit" for 127.0.0.1 at 2015-11-11 10:48:53 -0200
+  Processing by UsersController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered users/_form.html.erb (4.4ms)
+Rendered users/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 46ms (Views: 12.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-11 11:01:03 -0200
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered pages/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 53ms (Views: 8.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:01:05 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 88ms (Views: 38.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/books/18/edit" for 127.0.0.1 at 2015-11-11 11:01:09 -0200
+  Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.4ms)
+Rendered books/_form.html.erb (9.2ms)
+Rendered books/edit.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 65ms (Views: 16.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/18/edit" for 127.0.0.1 at 2015-11-11 11:05:47 -0200
+  Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.5ms)
+Rendered books/_form.html.erb (13.3ms)
+Rendered books/edit.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 60ms (Views: 20.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/books/18" for 127.0.0.1 at 2015-11-11 11:05:48 -0200
+  Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "book"=>{"title"=>"asdas", "writer"=>"asdasd", "pages"=>"12", "copies"=>"3", "book_binding"=>"0"}, "commit"=>"Atualizar Livro", "id"=>"18"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 18) AND (end_at > '2015-11-11')
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "books" SET "update_by" = 9, "updated_at" = '2015-11-11 13:05:48.931113' WHERE "books"."id" = 18[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE ("loans".book_id = 18)
+Redirected to http://localhost:3000/books/18
+Completed 302 Found in 80ms
+
+
+Started GET "/books/18" for 127.0.0.1 at 2015-11-11 11:05:48 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+Rendered books/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 61ms (Views: 14.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:05:50 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 82ms (Views: 38.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books/18/edit" for 127.0.0.1 at 2015-11-11 11:05:51 -0200
+  Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.5ms)
+Rendered books/_form.html.erb (9.9ms)
+Rendered books/edit.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 65ms (Views: 18.5ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/books/18" for 127.0.0.1 at 2015-11-11 11:05:55 -0200
+  Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "book"=>{"title"=>"asdas", "writer"=>"asdasd", "pages"=>"12", "copies"=>"2", "book_binding"=>"0"}, "commit"=>"Atualizar Livro", "id"=>"18"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 18) AND (end_at > '2015-11-11')
+Rendered shared/_error_messages.html.erb (0.8ms)
+Rendered books/_form.html.erb (4.0ms)
+Rendered books/edit.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 75ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books/18" for 127.0.0.1 at 2015-11-11 11:09:44 -0200
+  Processing by BooksController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "book"=>{"title"=>"asdas", "writer"=>"asdasd", "pages"=>"12", "copies"=>"2", "book_binding"=>"0"}, "commit"=>"Atualizar Livro", "id"=>"18"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 18) AND (end_at > '2015-11-11')[0m
+Rendered shared/_error_messages.html.erb (0.8ms)
+Rendered books/_form.html.erb (4.7ms)
+Rendered books/edit.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 100ms (Views: 30.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:10:04 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (30.2ms)
+Completed 200 OK in 74ms (Views: 33.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books/18" for 127.0.0.1 at 2015-11-11 11:10:06 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+Rendered books/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 57ms (Views: 14.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:10:15 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 78ms (Views: 34.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books/18" for 127.0.0.1 at 2015-11-11 11:10:16 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+Rendered books/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 56ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:10:19 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 84ms (Views: 39.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books/18/edit" for 127.0.0.1 at 2015-11-11 11:10:20 -0200
+  Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+Rendered shared/_error_messages.html.erb (0.5ms)
+Rendered books/_form.html.erb (10.0ms)
+Rendered books/edit.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 62ms (Views: 18.7ms | ActiveRecord: 1.1ms)
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+WARNING: Can't mass-assign protected attributes: last_sign_in_at
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 11:16:57 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mLoan Load (0.4ms)[0m  SELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered loans/index.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 130ms (Views: 66.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/loans/new" for 127.0.0.1 at 2015-11-11 11:17:08 -0200
+  Processing by LoansController#new as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mBook Load (1.1ms)[0m  [1mSELECT "books".* FROM "books"[0m
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered loans/_form.html.erb (22.2ms)
+Rendered loans/new.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 126ms (Views: 40.6ms | ActiveRecord: 9.5ms)
+
+
+Started POST "/loans" for 127.0.0.1 at 2015-11-11 11:17:11 -0200
+  Processing by LoansController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "loan"=>{"book_id"=>"30", "user_id"=>"8"}, "commit"=>"Criar Empréstimo"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mBook Load (0.7ms)[0m  SELECT "books".* FROM "books"
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+  [1m[35mSQL (8.8ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".user_id = 8)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 30 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 30) AND (end_at > '2015-11-11')
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "loans" ("book_id", "user_id", "starts_at", "end_at", "created_by", "update_by", "created_at", "updated_at") VALUES (30, 8, '2015-11-11', '2015-11-18', 9, 9, '2015-11-11 13:18:12.735087', '2015-11-11 13:18:12.735087')[0m
+Redirected to http://localhost:3000/loans/28
+Completed 302 Found in 61701ms
+
+
+Started GET "/loans/28" for 127.0.0.1 at 2015-11-11 11:18:12 -0200
+  Processing by LoansController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."id" = 28 LIMIT 1[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 30 LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1[0m
+Rendered loans/show.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 122ms (Views: 61.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:19:14 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (44.4ms)
+Completed 200 OK in 103ms (Views: 56.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-11 11:19:15 -0200
+  Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.5ms)
+Rendered books/_form.html.erb (13.8ms)
+Rendered books/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 77ms (Views: 33.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-11 11:19:24 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "book"=>{"title"=>"'''", "writer"=>"asdsad", "pages"=>"123", "copies"=>"123", "book_binding"=>"0"}, "commit"=>"Criar Livro"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = NULL) AND (end_at > '2015-11-11')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "books" ("title", "writer", "pages", "book_binding", "copies", "created_at", "updated_at", "created_by", "update_by") VALUES ('''''''', 'asdsad', 123, 0, 123, '2015-11-11 13:19:24.531125', '2015-11-11 13:19:24.531125', 9, 9)
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE ("loans".book_id = NULL)[0m
+Redirected to http://localhost:3000/books/37
+Completed 302 Found in 83ms
+
+
+Started GET "/books/37" for 127.0.0.1 at 2015-11-11 11:19:24 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 37 LIMIT 1[0m
+Rendered books/show.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 74ms (Views: 25.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:19:25 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 81ms (Views: 35.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2015-11-11 11:19:27 -0200
+  Processing by BooksController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered books/_form.html.erb (9.9ms)
+Rendered books/new.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 62ms (Views: 18.2ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2015-11-11 11:19:42 -0200
+  Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "book"=>{"title"=>"<html>", "writer"=>"<html>", "pages"=>"123", "copies"=>"123", "book_binding"=>"0"}, "commit"=>"Criar Livro"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = NULL) AND (end_at > '2015-11-11')[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "books" ("title", "writer", "pages", "book_binding", "copies", "created_at", "updated_at", "created_by", "update_by") VALUES ('<html>', '<html>', 123, 0, 123, '2015-11-11 13:19:43.075524', '2015-11-11 13:19:43.075524', 9, 9)
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE ("loans".book_id = NULL)[0m
+Redirected to http://localhost:3000/books/38
+Completed 302 Found in 76ms
+
+
+Started GET "/books/38" for 127.0.0.1 at 2015-11-11 11:19:43 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 38 LIMIT 1[0m
+Rendered books/show.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 80ms (Views: 15.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:19:44 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (36.6ms)
+Completed 200 OK in 87ms (Views: 40.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books?page=5" for 127.0.0.1 at 2015-11-11 11:19:46 -0200
+  Processing by BooksController#index as HTML
+  Parameters: {"page"=>"5"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 20
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 104ms (Views: 54.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:19:49 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 83ms (Views: 34.9ms | ActiveRecord: 1.1ms)
+  [1m[36mLoan Load (0.6ms)[0m  [1mSELECT "loans".* FROM "loans"[0m
+  [1m[35mLoan Load (0.4ms)[0m  SELECT "loans".* FROM "loans"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 21[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 18[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 21 LIMIT 1
+  [1m[36mAREL (21.0ms)[0m  [1mDELETE FROM "loans" WHERE "loans"."id" = 21[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 21 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mLoan Load (0.1ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "loans" WHERE "loans"."id" = 22
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1[0m
+  [1m[35mLoan Load (0.1ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."id" = 22 LIMIT 1
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."id" = 23 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."id" = 23 LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "loans" WHERE "loans"."id" = 23[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."id" = 23 LIMIT 1
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."id" = 24 LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."id" = 24 LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "loans" WHERE "loans"."id" = 24[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."id" = 24 LIMIT 1
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."id" = 24 LIMIT 1[0m
+  [1m[35mLoan Load (0.1ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 18 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 18 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (LOAN IS NOT NULL)
+SQLite3::SQLException: no such column: LOAN: SELECT "books".* FROM "books" WHERE (LOAN IS NOT NULL)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE (LOAN_id IS NOT NULL)[0m
+SQLite3::SQLException: no such column: LOAN_id: SELECT "books".* FROM "books" WHERE (LOAN_id IS NOT NULL)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE (loan_id IS NOT NULL)
+SQLite3::SQLException: no such column: loan_id: SELECT "books".* FROM "books" WHERE (loan_id IS NOT NULL)
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans"[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 30 LIMIT 1
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 30 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 30 LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 30[0m
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 30 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 30 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 30 LIMIT 1
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 30 LIMIT 1[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "loans" WHERE "loans"."id" = 28
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 30 LIMIT 1[0m
+  [1m[35mLoan Load (0.1ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 30 LIMIT 1
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 11:34:15 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1[0m
+Rendered loans/index.html.erb within layouts/application (24.0ms)
+Completed 500 Internal Server Error in 84ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    15: 
+    16: <% @loans.each do |loan| %>
+    17: 	<tr>
+    18: 		<td><%= loan.book.title %></td>
+    19: 		<td><%= loan.user.name %></td>
+    20: 		<td><%= loan.starts_at %></td>
+    21: 		<td><%= loan.end_at %></td>
+  app/views/loans/index.html.erb:18:in `block in _app_views_loans_index_html_erb__1430465009991984949_2211061000_4043276306013938602'
+  app/views/loans/index.html.erb:16:in `_app_views_loans_index_html_erb__1430465009991984949_2211061000_4043276306013938602'
+  app/controllers/loans_controller.rb:7:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 11:34:21 -0200
+  Processing by LoansController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1
+Rendered loans/index.html.erb within layouts/application (25.2ms)
+Completed 500 Internal Server Error in 69ms
+
+ActionView::Template::Error (undefined method `title' for nil:NilClass):
+    15: 
+    16: <% @loans.each do |loan| %>
+    17: 	<tr>
+    18: 		<td><%= loan.book.title %></td>
+    19: 		<td><%= loan.user.name %></td>
+    20: 		<td><%= loan.starts_at %></td>
+    21: 		<td><%= loan.end_at %></td>
+  app/views/loans/index.html.erb:18:in `block in _app_views_loans_index_html_erb__1430465009991984949_2177190360_4043276306013938602'
+  app/views/loans/index.html.erb:16:in `_app_views_loans_index_html_erb__1430465009991984949_2177190360_4043276306013938602'
+  app/controllers/loans_controller.rb:7:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.6ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.3ms)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mLoan Load (0.1ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" IS NULL LIMIT 1
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 0 LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE (book_id is null)[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans"
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 21 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 21 LIMIT 1
+  [1m[36mLoan Load (0.2ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 21 LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  DELETE FROM "loans" WHERE "loans"."id" = 25
+  [1m[36mLoan Load (0.1ms)[0m  [1mSELECT "loans".* FROM "loans" WHERE "loans"."book_id" = 21 LIMIT 1[0m
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 11:36:09 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered loans/index.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 86ms (Views: 41.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 11:37:02 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered loans/index.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 82ms (Views: 43.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/loans" for 127.0.0.1 at 2015-11-11 11:37:09 -0200
+  Processing by LoansController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+  [1m[35mLoan Load (0.2ms)[0m  SELECT "loans".* FROM "loans" LIMIT 25 OFFSET 0
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 31 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered loans/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 79ms (Views: 38.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:10 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+Rendered books/index.html.erb within layouts/application (36.5ms)
+Completed 500 Internal Server Error in 102ms
+
+ActionView::Template::Error (undefined local variable or method `queue_of_book' for #<#<Class:0x00000103800b70>:0x000001017ecc08>):
+    17: 		<td><%= book.writer %></td>
+    18: 		<td><%= link_to t('show'), book%></td>
+    19: 		<td><%= link_to t('edit'), edit_book_path(book) %></td>
+    20: 		<td><%= link_to t('destroy'), queue_of_book, :confirm => 'Are you sure?', :method => :delete %></td>
+    21: 	</tr>
+    22: <% end %>
+    23: </table>
+  app/views/books/index.html.erb:20:in `block in _app_views_books_index_html_erb___1327789041976777777_2160010100_4043276306013938602'
+  app/views/books/index.html.erb:14:in `_app_views_books_index_html_erb___1327789041976777777_2160010100_4043276306013938602'
+  app/controllers/books_controller.rb:5:in `index'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.5ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (35.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:15 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 86ms (Views: 43.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books/19" for 127.0.0.1 at 2015-11-11 11:37:21 -0200
+
+AbstractController::ActionNotFound (The action 'destroy' could not be found for BooksController):
+  
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:30 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 77ms (Views: 34.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books/19" for 127.0.0.1 at 2015-11-11 11:37:32 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"19"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 19 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 19)[0m
+Completed 500 Internal Server Error in 69ms
+
+NoMethodError (undefined method `empty?' for 0:Fixnum):
+  app/models/book.rb:15:in `before_destroy'
+  app/controllers/books_controller.rb:37:in `destroy'
+
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.0ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.2ms)
+
+
+Started POST "/books/19" for 127.0.0.1 at 2015-11-11 11:37:43 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"19"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 19 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 19)
+  [1m[36mAREL (0.4ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 19[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 76ms
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:43 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 81ms (Views: 38.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books/20" for 127.0.0.1 at 2015-11-11 11:37:46 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"20"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 20 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 20)[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "books" WHERE "books"."id" = 20
+Redirected to http://localhost:3000/books
+Completed 302 Found in 71ms
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:46 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 72ms (Views: 32.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/books/22" for 127.0.0.1 at 2015-11-11 11:37:48 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"22"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 22 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 22)
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 22[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 74ms
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:48 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 74ms (Views: 31.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/books/23" for 127.0.0.1 at 2015-11-11 11:37:49 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"23"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 23 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 23)[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "books" WHERE "books"."id" = 23
+Redirected to http://localhost:3000/books
+Completed 302 Found in 75ms
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:49 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (31.0ms)
+Completed 200 OK in 83ms (Views: 34.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:37:50 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 70ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:37:50 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+Rendered books/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 60ms (Views: 15.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:52 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 80ms (Views: 34.0ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:37:53 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 70ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:37:54 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+Rendered books/show.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 56ms (Views: 13.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:55 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 89ms (Views: 34.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:37:56 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 71ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:37:57 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+Rendered books/show.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 89ms (Views: 17.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:37:58 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 82ms (Views: 37.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:38:01 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 77ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:38:01 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+Rendered books/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 59ms (Views: 14.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:38:09 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (29.7ms)
+Completed 200 OK in 77ms (Views: 33.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:38:11 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 74ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:38:11 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+Rendered books/show.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 55ms (Views: 13.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:38:12 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 78ms (Views: 35.3ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:38:14 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 70ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:38:15 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+Rendered books/show.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 60ms (Views: 14.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:38:16 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 79ms (Views: 35.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/25" for 127.0.0.1 at 2015-11-11 11:38:18 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"25"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 25 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 25)
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 25[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 72ms
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:38:18 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (31.9ms)
+Completed 200 OK in 83ms (Views: 35.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books/26" for 127.0.0.1 at 2015-11-11 11:38:20 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"26"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 26 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 26)[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "books" WHERE "books"."id" = 26
+Redirected to http://localhost:3000/books
+Completed 302 Found in 70ms
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:38:20 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 75ms (Views: 32.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/27" for 127.0.0.1 at 2015-11-11 11:38:21 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"27"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 27 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 27)
+  [1m[36mAREL (0.2ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = 27[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 72ms
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:38:21 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 78ms (Views: 34.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:38:22 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)[0m
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 64ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:38:22 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+Rendered books/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 62ms (Views: 13.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:39:23 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.4ms)
+Rendered books/show.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 60ms (Views: 16.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:39:24 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 85ms (Views: 34.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:39:26 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)[0m
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 65ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:39:26 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.4ms)
+Rendered books/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 66ms (Views: 15.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:39:43 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 83ms (Views: 35.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:39:55 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 81ms (Views: 39.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:40:00 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 12626ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:40:13 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+Rendered shared/_error_messages.html.erb (8928.5ms)
+Rendered books/show.html.erb within layouts/application (8943.3ms)
+Completed 200 OK in 8988ms (Views: 8946.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:42:17 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+Rendered shared/_error_messages.html.erb (0.4ms)
+Rendered books/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 58ms (Views: 16.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:42:18 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 77ms (Views: 34.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:42:19 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 19762ms
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:42:39 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 79ms (Views: 34.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:42:39 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 1521ms
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:42:41 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)[0m
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 1243ms
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:42:42 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 411ms
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:42:43 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)[0m
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 756ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:42:43 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.4ms)
+Rendered books/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 59ms (Views: 15.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:42:55 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 83ms (Views: 40.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:42:56 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)[0m
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 63ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:42:56 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.4ms)
+Rendered books/show.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 59ms (Views: 14.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:43:31 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.4ms)
+Rendered books/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 62ms (Views: 15.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:43:32 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 82ms (Views: 36.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/books/24" for 127.0.0.1 at 2015-11-11 11:43:33 -0200
+  Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zglxvj7p2lXTNSHFLvsT3BVhRxo0MJZjvN/dxeAW0ZQ=", "id"=>"24"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.2ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "loans" WHERE ("loans".book_id = 24)[0m
+Redirected to http://localhost:3000/books/24
+Completed 302 Found in 73ms
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:43:33 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.5ms)
+Rendered books/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 59ms (Views: 15.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books/24" for 127.0.0.1 at 2015-11-11 11:43:34 -0200
+  Processing by BooksController#show as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = 24 LIMIT 1[0m
+Rendered shared/_error_messages.html.erb (0.4ms)
+Rendered books/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 56ms (Views: 14.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:45:11 -0200
+  Processing by BooksController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books" LIMIT 5 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM "books"
+Rendered books/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 86ms (Views: 37.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2015-11-11 11:48:22 -0200
+  Processing by BooksController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+DEPRECATION WARNING: Base#before_destroy has been deprecated, please use Base.before_destroy :method instead. (called from <class:Book> at /Users/getttecnologia/library_system/app/models/book.rb:14)
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books" LIMIT 5 OFFSET 0
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT COUNT(*) FROM "books"[0m
+Rendered books/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 72ms (Views: 30.7ms | ActiveRecord: 1.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/getttecnologia/.rvm/rubies/ruby-2.1.1/lib/ruby/2.1.0/webrick/httpserver.rb:138)
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-11 14:00:53 -0200
+  Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2015-11-11 14:00:53 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.2ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 70ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2015-11-11 14:01:17 -0200
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/ID1ebPai33V8FO9iQUCZDRmNGT/omzI0eCpxGsmesE=", "user"=>{"email"=>"normal@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (11.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'normal@gmail.com' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2015-11-10 19:45:30.974446', "current_sign_in_at" = '2015-11-11 16:01:17.853361', "sign_in_count" = 5, "updated_at" = '2015-11-11 16:01:17.854024' WHERE "users"."id" = 9[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 216ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-11 14:01:17 -0200
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1
+Rendered pages/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 54ms (Views: 16.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/accounts/sign_out" for 127.0.0.1 at 2015-11-11 14:01:22 -0200
+  Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/ID1ebPai33V8FO9iQUCZDRmNGT/omzI0eCpxGsmesE="}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 9 LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 54ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-11 14:01:22 -0200
+  Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 20ms
+
+
+Started GET "/accounts/sign_in" for 127.0.0.1 at 2015-11-11 14:01:22 -0200
+  Processing by Devise::SessionsController#new as HTML
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/shared/_links.erb (1.2ms)
+Rendered /Users/getttecnologia/.rvm/gems/ruby-2.1.1@rails309/gems/devise-1.5.4/app/views/devise/sessions/new.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 45ms (Views: 10.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/accounts/sign_in" for 127.0.0.1 at 2015-11-11 14:01:24 -0200
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yuwsRMKqyyFoOvEGPbBO6TLG80Xk4tD+A1EMXvYOCto=", "user"=>{"email"=>"employee@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'employee@gmail.com' LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2015-11-10 19:37:28.876910', "current_sign_in_at" = '2015-11-11 16:01:25.008148', "sign_in_count" = 7, "updated_at" = '2015-11-11 16:01:25.008622' WHERE "users"."id" = 8[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 121ms
+
+
+Started GET "/" for 127.0.0.1 at 2015-11-11 14:01:25 -0200
+  Processing by PagesController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 8 LIMIT 1
+Rendered pages/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 39ms (Views: 6.2ms | ActiveRecord: 1.0ms)
