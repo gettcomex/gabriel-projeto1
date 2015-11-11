@@ -1,5 +1,4 @@
 module ApplicationHelper
-
 	def error_messages_for(resource)
 		render partial: "shared/error_messages", locals: {
 			resource: resource
@@ -20,4 +19,23 @@ module ApplicationHelper
 		model.human_attribute_name(attribute)
 	end
 	alias_method :t_attr, :translate_attribute
+
+	def model_local
+		controller_name.classify.constantize
+	end
+
+	def translate_model_local
+		translate_model(model_local)
+	end
+	alias_method :t_model_local, :translate_model_local
+
+	def translate_models_local
+		translate_models(model_local)
+	end
+	alias_method :t_models_local, :translate_models_local
+
+	def translate_attribute_local(attribute)
+		translate_attribute(model_local, attribute)
+	end
+	alias_method :t_attr_local, :translate_attribute_local
 end

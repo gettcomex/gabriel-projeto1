@@ -13,7 +13,7 @@ class Loan < ActiveRecord::Base
 	before_create :add_starts_at
 
 	scope :opened, lambda {
-		where("end_at > ?", DateTime.now.to_date)
+		where("end_at > ?", Date.now)
 	}
 
 	DURATION_IN_DAYS = 7.days
@@ -32,7 +32,7 @@ protected
 	end
 
 	def add_starts_at
-		self.starts_at = DateTime.now.to_date
+		self.starts_at = Date.now
 		self.end_at = self.starts_at + DURATION_IN_DAYS
 	end
 end
