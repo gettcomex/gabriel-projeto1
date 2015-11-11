@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<%= error_messages_for(@book) %>
+
 <p>
   <b><%=t_attr_local :title %>:</b>
   <%= @book.title %>

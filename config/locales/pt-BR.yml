@@ -34,14 +34,19 @@
       book:
         title: Título
         writer: Escritor
-        pages: Páginas
+        pages: Número de Páginas
         book_binding: Tipo
-        copies: Cópias
+        copies: Número de Cópias
       loan:
         book: Livro
         user: Usuário
         starts_at: Começa em
         end_at: Termina em
+      user:
+        name: Nome
+        login: Login
+        password: Senha
+        email: Email
   views:
     pagination:
       first: Primeiro
