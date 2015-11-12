@@ -17,10 +17,10 @@
 	<tr>
 		<td><%= loan.book.title %></td>
 		<td><%= loan.user.name %></td>
-		<td><%= loan.starts_at %></td>
-		<td><%= loan.end_at %></td>
+		<td><%= l loan.starts_at %></td>
+		<td><%= l loan.end_at %></td>
 		<td><%= link_to t('show'), loan %></td>
-		<td><%= link_to t('renew'), loan_renew_path(loan), :confirm => 'Are you sure?', :method => :put %></td>
+		<td><%= link_to t('renew'), loan_renew_path(loan), :confirm => t('confirm'), :method => :put %></td>
 	</tr>
 <% end %>
 </table>

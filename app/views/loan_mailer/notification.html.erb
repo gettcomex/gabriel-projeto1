@@ -7,5 +7,5 @@
 
 <hr />
 
-<p>Empréstimo efetuado em <%= @loan.starts_at %> com devolução marcada para <%= @loan.end_at %>.</p>
+<p>Empréstimo efetuado em <%= l @loan.starts_at %> com devolução marcada para <%= l @loan.end_at %>.</p>
 <p>Período de <%= distance_of_time_in_words @loan.starts_at, @loan.end_at %>.</p>

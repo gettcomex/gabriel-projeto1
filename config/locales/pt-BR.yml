@@ -43,13 +43,14 @@
       loan:
         book: Livro
         user: Usuário
-        starts_at: Começa em
-        end_at: Termina em
+        starts_at: Iniciado em
+        end_at: Finalizar em
       user:
         name: Nome
         login: Login
         password: Senha
         email: Email
+        is_employee: Funcionário
       queue_of_book:
         book: Livro
         user: Usuário

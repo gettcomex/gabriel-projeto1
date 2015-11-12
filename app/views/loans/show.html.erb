@@ -12,12 +12,12 @@
 
 <p>
 	<b><%=t_attr_local :starts_at %>:</b>
-	<%= @loan.starts_at %>
+	<%= l @loan.starts_at %>
 </p>
 
 <p>
 	<b><%=t_attr_local :end_at %>:</b>
-	<%= @loan.end_at %>
+	<%= l @loan.end_at %>
 </p>
 
 <%= link_to t('back'), loans_path %>

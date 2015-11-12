@@ -5,5 +5,5 @@ Escritor: <%= @loan.book.writer %>
 Número de Páginas: <%= @loan.book.pages %>
 Número de Cópias: <%= @loan.book.copies %>
 
-Empréstimo efetuado em <%= @loan.starts_at %> com devolução marcada para <%= @loan.end_at %>.
+Empréstimo efetuado em <%= l @loan.starts_at %> com devolução marcada para <%= @l loan.end_at %>.
 Período de <%= distance_of_time_in_words @loan.starts_at, @loan.end_at %>.

@@ -1,11 +1,10 @@
 class Book < ActiveRecord::Base
 	include CreatedBy
 	include UpdateBy
+	include HasManyLoans
+	include HasManyQueueOfBooks
 
 	attr_accessor :flash_alerts
-
-	has_many :loans
-	has_many :queue_of_books
 
 	validates :title, presence: true, length: { maximum: 150 }
 	validates :writer, presence: true, length: { maximum: 150 }
@@ -14,7 +13,7 @@ class Book < ActiveRecord::Base
 	validates :book_binding, inclusion: { in: [0, 1] }
 	validate :copies_is_less_than_loans_opened
 	
-	before_destroy :check_if_can_be_destroyed
+	before_destroy :check_can_be_destroyed!
 
 	scope :not_available, lambda {
 		where(%{
@@ -44,34 +43,16 @@ protected
 		end
 	end
 
-	def check_if_can_be_destroyed
+	def check_can_be_destroyed!
 		self.flash_alerts = []
-		check_if_book_has_loans & check_if_book_has_queue_of_books
+		check_has_loans! & check_has_queue_of_books!
 	end
 
-	def check_if_book_has_loans
-		if self.loans.empty?
-			true
-		else
-			error = "Cannot delete booking with loans."
-
-			self.flash_alerts << error
-			errors.add(:base, error)
-
-			false
-		end
+	def check_has_loans!
+		super "Cannot delete booking with loans."
 	end
 
-	def check_if_book_has_queue_of_books
-		if self.queue_of_books.empty?
-			true
-		else
-			error = "Cannot delete booking with reserves."
-
-			self.flash_alerts << error
-			errors.add(:base, error)
-
-			false
-		end
+	def check_has_queue_of_books!
+		super "Cannot delete booking with reserves."
 	end
 end

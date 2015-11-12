@@ -10,6 +10,7 @@ ActiveRecord::Base.transaction do
 	
 	User.create!(
 		name: "employee",
+		login: "employee",
 		email: "employee@gmail.com",
 		password: "123456",
 		password_confirmation: "123456",
@@ -18,6 +19,7 @@ ActiveRecord::Base.transaction do
 
 	User.create!(
 		name: "normal",
+		login: "normal",
 		email: "normal@gmail.com",
 		password: "123456",
 		password_confirmation: "123456",
