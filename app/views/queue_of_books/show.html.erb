@@ -1,15 +1,19 @@
-<p id="notice"><%= notice %></p>
+<%= notice_alert_messages_for %>
 
 <p>
-  <b>Book:</b>
-  <%= @queue_of_book.book %>
+	<b><%= t_attr_local :book %>:</b>
+	<%= @queue_of_book.book.title %>
 </p>
 
 <p>
-  <b>User:</b>
-  <%= @queue_of_book.user %>
+	<b><%= t_attr_local :user %>:</b>
+	<%= @queue_of_book.user.name %>
+</p>
+
+<p>
+	<b><%= t_attr_local :created_at %>:</b>
+	<%= @queue_of_book.created_at.to_date %>
 </p>
 
 
-<%= link_to 'Edit', edit_queue_of_book_path(@queue_of_book) %> |
-<%= link_to 'Back', queue_of_books_path %>
+<%= link_to t('back'), queue_of_books_path %>

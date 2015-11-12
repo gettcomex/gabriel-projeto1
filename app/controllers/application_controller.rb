@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+	include TranslateHelper
+	
 	protect_from_forgery
 
 	before_filter :authenticate_user!, :set_current_user

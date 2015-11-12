@@ -20,6 +20,9 @@
 				<li>
 					<%= link_to 'Empréstimos', loans_path %>
 				</li>
+				<li>
+					<%= link_to 'Reservas', queue_of_books_path %>
+				</li>
 				
 				<% if current_user.is_employee %>
 					<li>

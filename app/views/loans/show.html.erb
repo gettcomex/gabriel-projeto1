@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<%= notice_alert_messages_for %>
 
 <p>
 	<b><%=t_attr_local :book %>:</b>
@@ -20,6 +20,4 @@
 	<%= @loan.end_at %>
 </p>
 
-
-<%= link_to t('edit'), edit_loan_path(@loan) %> |
 <%= link_to t('back'), loans_path %>

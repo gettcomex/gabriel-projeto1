@@ -1,0 +1,11 @@
+<p>Sobre o livro:</p>
+
+<p><b>Título:</b> <%= @loan.book.title %></p>
+<p><b>Escritor:</b> <%= @loan.book.writer %></p>
+<p><b>Número de Páginas:</b> <%= @loan.book.pages %></p>
+<p><b>Número de Cópias:</b> <%= @loan.book.copies %></p>
+
+<hr />
+
+<p>Empréstimo efetuado em <%= @loan.starts_at %> com devolução marcada para <%= @loan.end_at %>.</p>
+<p>Período de <%= distance_of_time_in_words @loan.starts_at, @loan.end_at %>.</p>

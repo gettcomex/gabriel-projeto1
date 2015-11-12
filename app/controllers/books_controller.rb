@@ -22,19 +22,20 @@ class BooksController < ApplicationController
 	def create
 		@book = Book.new(params[:book])
 
-		flash[:notice] = 'Book was successfully created.' if @book.save
+		flash[:notice] = t_successfully_created_local if @book.save
 		respond_with @book
 	end
 
 	def update
 		@book = Book.find(params[:id])
-		flash[:notice] = 'Book was successfully updated.' if @book.update_attributes(params[:book])
+		flash[:notice] = t_successfully_updated_local if @book.update_attributes(params[:book])
 		respond_with @book
 	end
 
-	# def destroy
-	# 	@book = Book.find(params[:id])
-	# 	@book.destroy
-	# 	respond_with @book
-	# end
+	def destroy
+		@book = Book.find(params[:id])
+		@book.destroy
+		flash[:alerts] = @book.flash_alerts
+		respond_with @book
+	end
 end

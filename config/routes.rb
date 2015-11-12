@@ -6,8 +6,12 @@ LibrarySystem::Application.routes.draw do
 
 	resources :users
 	resources :books
-	resources :loans
-	resources :queue_of_books
+	
+	resources :loans, except: %w(edit update destroy) do
+		put 'renew'
+	end
+
+	resources :queue_of_books, except: %w(edit update)
 
 	devise_for :users, :path => 'accounts'
 

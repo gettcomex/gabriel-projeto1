@@ -20,9 +20,11 @@
 		<td><%= loan.starts_at %></td>
 		<td><%= loan.end_at %></td>
 		<td><%= link_to t('show'), loan %></td>
-		<td><%= link_to t('edit'), edit_loan_path(loan) %></td></td>
+		<td><%= link_to t('renew'), loan_renew_path(loan), :confirm => 'Are you sure?', :method => :put %></td>
 	</tr>
 <% end %>
 </table>
 
 <br />
+
+<%= paginate @loans %>

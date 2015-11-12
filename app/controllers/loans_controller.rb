@@ -17,26 +17,23 @@ class LoansController < ApplicationController
 		respond_with @loan
 	end
 
-	def edit
-		@loan = Loan.find(params[:id])
-	end
-
 	def create
 		@loan = Loan.new(params[:loan])
 		
-		flash[:notice] = 'Loan was successfully created.' if @loan.save
+		flash[:notice] = t_successfully_created_local if @loan.save
 		respond_with @loan
 	end
 
-	def update
-		@loan = Loan.find(params[:id])
-		flash[:notice] = 'Loan was successfully updated.' if @loan.update_attributes(params[:Loan])
-		respond_with @loan
-	end
+	def renew
+		@loan = Loan.find(params[:loan_id])
 
-	def destroy
-		@loan = Loan.find(params[:id])
-		@loan.destroy
+		if @loan.book.has_queue_of_books?
+			flash[:alerts] = ['Loans with reserve can not be renewed.']
+		else
+			@loan.renew
+			flash[:notice] = "Loan was successfully renewed. New date: #{@loan.end_at}"
+		end
+
 		respond_with @loan
 	end
 

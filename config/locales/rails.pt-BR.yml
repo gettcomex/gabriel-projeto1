@@ -221,6 +221,9 @@
       less_than_or_equal_to: "deve ser menor ou igual a %{count}"
       odd: "deve ser ímpar"
       even: "deve ser par"
+      exceeded_the_limit_of_loans: "ultrapassou o limite de empréstimos"
+      not_has_in_inventory: "não está no inventário"
+      is_less_than_loans_opened: "is smaller than the amount of open loans"
 
   activerecord:
     errors:

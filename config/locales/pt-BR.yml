@@ -9,6 +9,9 @@
   new_model: Criar %{model}
   show: Exibir
   back: Voltar
+  renew: Renovar
+  successfully_created: "%{model} foi criado com sucesso."
+  successfully_updated: "%{model} foi alterado com sucesso."
 
   books:
     new:
@@ -24,7 +27,7 @@
       loan:
         one: Empréstimo
         other: Empréstimos
-      queue_of_books:
+      queue_of_book:
         one: Reserva
         other: Reservas
       user:
@@ -47,6 +50,10 @@
         login: Login
         password: Senha
         email: Email
+      queue_of_book:
+        book: Livro
+        user: Usuário
+        created_at: Reservado em
   views:
     pagination:
       first: Primeiro

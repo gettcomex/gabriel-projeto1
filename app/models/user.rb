@@ -6,7 +6,9 @@ class User < ActiveRecord::Base
 		:rememberable, :trackable, :validatable
 
 	attr_accessible :name, :login, :is_employee, :email, :password, :password_confirmation, :remember_me
+	
 	has_many :loans
+	has_many :queue_of_books
 
 	LIMIT_FOR_EMPLOYEE = 10
 	LIMIT_FOR_USER = 3
