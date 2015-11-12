@@ -1,0 +1,20 @@
+<%= notice_alert_messages_for %>
+
+<p>
+	<b><%= t_attr_local :name %>:</b>
+	<%= @user.name %>
+</p>
+
+<p>
+	<b><%= t_attr_local :login %>:</b>
+	<%= @user.login %>
+</p>
+
+<p>
+	<b><%= t_attr_local :email %>:</b>
+	<%= @user.email %>
+</p>
+
+
+<%= link_to t('edit'), edit_employee_user_path(@user) %> |
+<%= link_to t('back'), employee_users_path %>

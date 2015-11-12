@@ -49,6 +49,7 @@
         name: Nome
         login: Login
         password: Senha
+        password_confirmation: Confirme sua Senha
         email: Email
         is_employee: Funcionário
       queue_of_book:

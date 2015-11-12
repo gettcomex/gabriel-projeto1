@@ -1,0 +1,23 @@
+<%= notice_alert_messages_for %>
+
+<p>
+	<b><%=t_attr_local :book %>:</b>
+	<%= @loan.book.title %>
+</p>
+
+<p>
+	<b><%=t_attr_local :user %>:</b>
+	<%= @loan.user.name %>
+</p>
+
+<p>
+	<b><%=t_attr_local :starts_at %>:</b>
+	<%= l @loan.starts_at %>
+</p>
+
+<p>
+	<b><%=t_attr_local :end_at %>:</b>
+	<%= l @loan.end_at %>
+</p>
+
+<%= link_to t('back'), employee_loans_path %>

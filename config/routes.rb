@@ -1,19 +1,25 @@
 LibrarySystem::Application.routes.draw do
 
-	root to: "pages#index"
-
-	match "/home" => "pages#index", :as => :home
-
-	resources :users
-	resources :books
-	
-	resources :loans, except: %w(edit update destroy) do
-		put 'renew'
+	scope "/admin" do
+		devise_for :users
 	end
+	
+	namespace :employee do
+		root to: "pages#index"
 
-	resources :queue_of_books, except: %w(edit update)
+		match "/home" => "pages#index", :as => :home
 
-	devise_for :users, :path => 'accounts'
+		resources :users
+		resources :books
+		
+		resources :loans, except: %w(edit update destroy) do
+			put 'renew'
+		end
+
+		resources :queue_of_books, except: %w(edit update)
+
+		devise_for :users, :path => 'accounts'
+	end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
