@@ -1,0 +1,11 @@
+<%= form_for(@loan) do |f| %>
+
+	<%= error_messages_for(@loan) %>
+	
+	<%= select_book_and_users(f, @books, @users) %>
+
+	<div class="actions">
+		<%= f.submit %>
+	</div>
+	
+<% end %>
