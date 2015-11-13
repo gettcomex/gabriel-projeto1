@@ -10,6 +10,7 @@ class Ability
 		else
 			can :manage, Loan, user_id: user.id
 			can :renew, Loan, user_id: user.id
+			can :report_result, Loan, user_id: user.id
 
 			can :manage, QueueOfBook, user_id: user.id
 

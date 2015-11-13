@@ -39,9 +39,31 @@ class LoansController < ApplicationController
 		respond_with @loan, location: loan_path(@loan)
 	end
 
+	def report
+	end
+
+	def report_result
+		filter = params[:filter]
+
+		starts_at = date_from(filter, 'starts_at')
+		end_at = date_from(filter, 'end_at')
+		
+		@loans = Loan.starts_at_between(starts_at, end_at)
+		@loans = @loans.where(book_id: params[:book_id]) if params[:book_id].present?
+		@loans = @loans.where(user_id: params[:user_id]) if params[:user_id].present?
+	end
+
 protected
 	def load_resources
 		@users = User.all
 		@books = Book.all
+	end
+
+	def date_from(filter, name)
+		year = filter[name + '(1i)'].to_i
+		month = filter[name + '(2i)'].to_i
+		day = filter[name + '(3i)'].to_i
+
+		Date.new(year, month, day)
 	end
 end

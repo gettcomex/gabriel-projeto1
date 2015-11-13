@@ -14,6 +14,9 @@
   successfully_updated: "%{model} foi alterado com sucesso."
   report_of_loan: Relatório de Empréstimo
   report: Relatório
+  export: Exportar
+  period_of: Período de
+  to: Até
 
   books:
     new:

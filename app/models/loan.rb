@@ -28,6 +28,10 @@ class Loan < ActiveRecord::Base
 		end
 	end)
 
+	scope :starts_at_between, lambda { |starts_filter, end_filter|
+		where("starts_at BETWEEN ? AND ?", starts_filter, end_filter)
+	}
+
 	DURATION_IN_DAYS = 7.days
 
 	def renew

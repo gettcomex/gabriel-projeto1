@@ -11,10 +11,10 @@ LibrarySystem::Application.routes.draw do
 
 		put "renew"
 
-		# collection do
-		# 	get "report"
-		# 	get "export/:starts_at/:end_at" => "loans#export"
-		# end
+		collection do
+			get "report"
+			get "report_result"
+		end
 	end
 
 	resources :queue_of_books, except: %w(edit update)
