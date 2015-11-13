@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
+	load_and_authorize_resource
+
 	def index
 		@users = User.page(params[:page])
-		
 		respond_with @users
 	end
 
@@ -20,7 +21,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(params[:user])
+		@user = User.new(resource_params)
 
 		flash[:notice] = t_successfully_created_local if @user.save
 		respond_with @user
@@ -28,7 +29,7 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		flash[:notice] = t_successfully_updated_local if @user.update_attributes(params[:user])
+		flash[:notice] = t_successfully_updated_local if @user.update_attributes(resource_params)
 		respond_with @user
 	end
 
@@ -37,5 +38,17 @@ class UsersController < ApplicationController
 		@user.destroy
 		flash[:alerts] = @user.flash_alerts
 		respond_with @user
+	end
+private
+	def resource_params
+		params.permit(user: permited_fields)[:user]
+	end
+
+	def permited_fields
+		if current_user.is_employee
+			User::PERMITED_FIELDS.clone << :is_employee
+		else
+			User::PERMITED_FIELDS
+		end
 	end
 end

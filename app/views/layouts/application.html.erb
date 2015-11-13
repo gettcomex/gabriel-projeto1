@@ -14,17 +14,26 @@
 				<li>
 					<%= link_to 'Home', root_path %>
 				</li>
-				<li>
-					<%= link_to 'Livros', books_path %>
-				</li>
-				<li>
-					<%= link_to 'Empréstimos', loans_path %>
-				</li>
-				<li>
-					<%= link_to 'Reservas', queue_of_books_path %>
-				</li>
-				
-				<% if current_user.is_employee %>
+
+				<% if can? :read, Book %>
+					<li>
+						<%= link_to 'Livros', books_path %>
+					</li>
+				<% end %>
+
+				<% if can? :read, Loan %>
+					<li>
+						<%= link_to 'Empréstimos', loans_path %>
+					</li>
+				<% end %>
+
+				<% if can? :read, QueueOfBook %>
+					<li>
+						<%= link_to 'Reservas', queue_of_books_path %>
+					</li>
+				<% end %>
+
+				<% if can? :read, User %>
 					<li>
 						<%= link_to 'Usuários', users_path %>
 					</li>

@@ -8,12 +8,18 @@ LibrarySystem::Application.routes.draw do
 	resources :books
 	
 	resources :loans, except: %w(edit update destroy) do
-		put 'renew'
+
+		put "renew"
+
+		# collection do
+		# 	get "report"
+		# 	get "export/:starts_at/:end_at" => "loans#export"
+		# end
 	end
 
 	resources :queue_of_books, except: %w(edit update)
 
-	devise_for :users, :path => 'accounts'
+	devise_for :users, :path => "accounts"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

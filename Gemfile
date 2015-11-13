@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.9'
 gem 'kaminari'
 gem 'devise'
+gem 'cancancan', '~> 1.9'
+gem 'strong_parameters'
 
 group :development, :teste do
 	gem 'byebug'

@@ -12,6 +12,8 @@
   renew: Renovar
   successfully_created: "%{model} foi criado com sucesso."
   successfully_updated: "%{model} foi alterado com sucesso."
+  report_of_loan: Relatório de Empréstimo
+  report: Relatório
 
   books:
     new:
@@ -49,6 +51,7 @@
         name: Nome
         login: Login
         password: Senha
+        password_confirmation: Confirme sua Senha
         email: Email
         is_employee: Funcionário
       queue_of_book:

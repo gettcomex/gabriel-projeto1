@@ -20,6 +20,14 @@ class Loan < ActiveRecord::Base
 		where("end_at > ?", Date.now)
 	}
 
+	scope :allowed, (lambda do
+		if User.current.is_employee
+			Loan.scoped
+		else
+			Loan.where(user_id: User.current.id)
+		end
+	end)
+
 	DURATION_IN_DAYS = 7.days
 
 	def renew

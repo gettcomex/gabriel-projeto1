@@ -1,9 +1,10 @@
 class QueueOfBooksController < ApplicationController
+	load_and_authorize_resource
 
 	before_filter :load_resources, only: %w(new create)
 
 	def index
-		@queue_of_books = QueueOfBook.page(params[:page])
+		@queue_of_books = QueueOfBook.allowed.page(params[:page])
 		respond_with @queue_of_books
 	end
 

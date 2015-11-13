@@ -5,7 +5,11 @@
 <table>
 	<tr>
 		<th><%= t_attr_local :book %></th>
-		<th><%= t_attr_local :user %></th>
+
+		<% if current_user.is_employee %>
+			<th><%= t_attr_local :user %></th>
+		<% end %>
+
 		<th><%= t_attr_local :created_at %></th>
 		<th></th>
 		<th></th>
@@ -15,7 +19,11 @@
 <% @queue_of_books.each do |queue_of_book| %>
 	<tr>
 		<td><%= queue_of_book.book.title %></td>
-		<td><%= queue_of_book.user.name %></td>
+		
+		<% if current_user.is_employee %>
+			<td><%= queue_of_book.user.name %></td>
+		<% end %>
+
 		<td><%= l queue_of_book.created_at.to_date %></td>
 		<td><%= link_to t('show'), queue_of_book %></td>
 		<td><%= link_to t('destroy'), queue_of_book, :confirm => t('confirm'), :method => :delete %></td>

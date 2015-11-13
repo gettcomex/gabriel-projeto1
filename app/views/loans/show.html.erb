@@ -5,10 +5,12 @@
 	<%= @loan.book.title %>
 </p>
 
-<p>
-	<b><%=t_attr_local :user %>:</b>
-	<%= @loan.user.name %>
-</p>
+<% if current_user.is_employee %>
+	<p>
+		<b><%=t_attr_local :user %>:</b>
+		<%= @loan.user.name %>
+	</p>
+<% end %>
 
 <p>
 	<b><%=t_attr_local :starts_at %>:</b>
@@ -20,4 +22,4 @@
 	<%= l @loan.end_at %>
 </p>
 
-<%= link_to t('back'), loans_path %>
+<%= link_to t('back'), :back %>

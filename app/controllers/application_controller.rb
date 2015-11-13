@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
 	include TranslateHelper
+	include CanCan::ControllerAdditions
 	
 	protect_from_forgery
 

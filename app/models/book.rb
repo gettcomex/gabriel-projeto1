@@ -38,7 +38,7 @@ class Book < ActiveRecord::Base
 	
 protected
 	def copies_is_less_than_loans_opened
-		if self.copies < self.loans.opened.count
+		if self.copies.present? && self.copies < self.loans.opened.count
 			errors.add(:copies, :is_less_than_loans_opened)
 		end
 	end

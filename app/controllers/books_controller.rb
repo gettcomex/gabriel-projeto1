@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
-
+	load_and_authorize_resource
+	
 	def index
 		@books = Book.page(params[:page])
 		respond_with @books

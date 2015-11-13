@@ -5,10 +5,12 @@
 	<%= @queue_of_book.book.title %>
 </p>
 
-<p>
-	<b><%= t_attr_local :user %>:</b>
-	<%= @queue_of_book.user.name %>
-</p>
+<% if current_user.is_employee %>
+	<p>
+		<b><%=t_attr_local :user %>:</b>
+		<%= @queue_of_book.user.name %>
+	</p>
+<% end %>
 
 <p>
 	<b><%= t_attr_local :created_at %>:</b>
@@ -16,4 +18,4 @@
 </p>
 
 
-<%= link_to t('back'), queue_of_books_path %>
+<%= link_to t('back'), :back %>

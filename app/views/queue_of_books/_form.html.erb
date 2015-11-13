@@ -1,7 +1,7 @@
 <%= form_for(@queue_of_book) do |f| %>
 
 	<%= error_messages_for(@queue_of_book) %>
-	
+
 	<%= select_book_and_users(f, @books, @users) %>
 
 	<div class="actions">

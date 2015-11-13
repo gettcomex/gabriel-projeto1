@@ -1,9 +1,10 @@
 class LoansController < ApplicationController
+	load_and_authorize_resource
 
-	before_filter :load_resources, only: %w(new create)
+	before_filter :load_resources, only: %w(new create report)
 
 	def index
-		@loans = Loan.page(params[:page])
+		@loans = Loan.allowed.page(params[:page])
 		respond_with @loans
 	end
 
@@ -26,6 +27,7 @@ class LoansController < ApplicationController
 
 	def renew
 		@loan = Loan.find(params[:loan_id])
+		authorize! :renew, @loan
 
 		if @loan.book.has_queue_of_books?
 			flash[:alerts] = ['Loans with reserve can not be renewed.']
@@ -34,7 +36,7 @@ class LoansController < ApplicationController
 			flash[:notice] = "Loan was successfully renewed. New date: #{@loan.end_at}"
 		end
 
-		respond_with @loan
+		respond_with @loan, location: loan_path(@loan)
 	end
 
 protected

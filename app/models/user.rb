@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	include ActiveModel::ForbiddenAttributesProtection
 	include CreatedBy
 	include UpdateBy
 	include HasManyLoans
@@ -7,14 +8,13 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable, :recoverable,
 		:rememberable, :trackable, :validatable
 
-	attr_accessible :name, :login, :is_employee, :email, :password, :password_confirmation, :remember_me
 	attr_accessor :flash_alerts
-
 	validates :name, presence: true
 	validates :login, presence: true
 
 	before_destroy :check_can_be_destroyed!
 
+	PERMITED_FIELDS = %w(name login email password password_confirmation remember_me)
 	LIMIT_FOR_EMPLOYEE = 10
 	LIMIT_FOR_USER = 3
 
