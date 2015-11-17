@@ -16,16 +16,7 @@ class Book < ActiveRecord::Base
 	before_destroy :check_can_be_destroyed!
 
 	scope :not_available, lambda {
-		where(%{
-			copies = (
-				SELECT
-					COUNT(id)
-				FROM
-					loans
-				WHERE
-					book_id = books.id
-			)
-		})
+		where("copies = (SELECT COUNT(id) FROM loans WHERE book_id = books.id)")
 	}
 
 	def has_in_inventory?

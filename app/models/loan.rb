@@ -20,13 +20,13 @@ class Loan < ActiveRecord::Base
 		where("end_at > ?", Date.now)
 	}
 
-	scope :allowed, (lambda do
+	scope :allowed, lambda {
 		if User.current.is_employee
 			Loan.scoped
 		else
 			Loan.where(user_id: User.current.id)
 		end
-	end)
+	}
 
 	scope :starts_at_between, lambda { |starts_filter, end_filter|
 		where("starts_at BETWEEN ? AND ?", starts_filter, end_filter)
@@ -35,8 +35,13 @@ class Loan < ActiveRecord::Base
 	DURATION_IN_DAYS = 7.days
 
 	def renew
-		self.end_at = Date.now + DURATION_IN_DAYS
-		self.save
+		if @loan.book.has_queue_of_books?
+			false
+		else
+			self.end_at = Date.now + DURATION_IN_DAYS
+			self.save
+			true
+		end
 	end
 
 protected

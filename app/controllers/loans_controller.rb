@@ -29,10 +29,9 @@ class LoansController < ApplicationController
 		@loan = Loan.find(params[:loan_id])
 		authorize! :renew, @loan
 
-		if @loan.book.has_queue_of_books?
+		if @loan.renew
 			flash[:alerts] = ['Loans with reserve can not be renewed.']
 		else
-			@loan.renew
 			flash[:notice] = "Loan was successfully renewed. New date: #{@loan.end_at}"
 		end
 
