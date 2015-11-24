@@ -585,11 +585,12 @@ Ext.define('Ext.toolbar.Paging', {
     /**
      * Refresh the current page, has the same effect as clicking the 'refresh' button.
      */
-    doRefresh : function(btn){
-        var me	= this;
+    doRefresh : function(){
+        var me = this,
+            current = me.store.currentPage;
 
-        if (me.fireEvent('beforechange', me, me.store.currentPage) !== false) {
-			Ext.ux.List.loadList(btn.up('grid'));
+        if (me.fireEvent('beforechange', me, current) !== false) {
+            me.store.loadPage(current);
         }
     },
     
