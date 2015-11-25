@@ -1,11 +1,11 @@
-Ext.define('AW.store.Books', {
+Ext.define('AW.store.Users', {
 	extend: 'Ext.data.Store',
-	model: 'AW.model.Book',
+	model: 'AW.model.User',
 	pageSize: 5,
 	proxy: {
 		type: 'rest',
 		format: 'json',
-		url: '/books',
+		url: '/users',
 		reader: {
 			root: 'data'
 		}

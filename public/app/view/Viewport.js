@@ -1,15 +1,23 @@
 Ext.define('AW.view.Viewport', {
-    extend: 'Ext.container.Viewport',
-    requires:[
-        'Ext.layout.container.Fit',
-        'AW.view.BooksGrid'
-    ],
+	extend: 'Ext.container.Viewport',
+	requires:[
+		'Ext.layout.container.Fit',
+		'AW.view.BooksGrid',
+		'AW.view.UsersGrid'
+	],
 
-    layout: {
-        type: 'fit'
-    },
+	layout: {
+		type: 'fit'
+	},
 
-    items: [{
-        xtype: 'booksgrid'
-    }]
+	items: [{
+		xtype: 'tabpanel',
+		activeTab: 1, // test
+		title: 'Library',
+		items: [{
+			xtype: 'booksgrid'
+		}, {
+			xtype: 'usersgrid'
+		}]
+	}]
 });

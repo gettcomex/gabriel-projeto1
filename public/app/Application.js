@@ -1,22 +1,18 @@
 Ext.define('AW.Application', {
-    name: 'AW',
+	name: 'AW',
 
-    extend: 'Ext.app.Application',
+	extend: 'Ext.app.Application',
+	requires: [
+		'Ext.toolbar.Paging',
+		'Ext.form.Panel'
+	],
 
-    requires: [
-    	'Ext.toolbar.Paging',
-        'Ext.form.Panel'
-    ],
+	views: [],
 
-    views: [
-        
-    ],
+	controllers: [
+		'Books',
+		'Users'
+	],
 
-    controllers: [
-        'Main'
-    ],
-
-    stores: [
-        
-    ]
+	stores: []
 });

@@ -1,10 +1,10 @@
-Ext.define('AW.view.BooksGrid', {
+Ext.define('AW.view.UsersGrid', {
 	extend: 'Ext.grid.Panel',
-	alias: 'widget.booksgrid',
+	alias: 'widget.usersgrid',
 
-	store: 'AW.store.Books',
+	store: 'AW.store.Users',
 
-	title: 'Books',
+	title: 'Users',
 
 	columns: [
 		{
@@ -13,24 +13,19 @@ Ext.define('AW.view.BooksGrid', {
 			width: 35
 		},
 		{
-			dataIndex: 'title',
-			text: 'Title',
+			dataIndex: 'name',
+			text: 'Name',
 			width: 170,
 			flex: 1
 		},
 		{
-			dataIndex: 'writer',
-			text: 'Writer',
-			width: 200
+			dataIndex: 'email',
+			text: 'Email',
+			width: 250
 		},
 		{
-			dataIndex: 'pages',
-			text: 'Pages',
-			width: 100
-		},
-		{
-			dataIndex: 'copies',
-			text: 'Copies',
+			dataIndex: 'is_employee',
+			text: 'Is employee',
 			width: 100
 		}
 	],
@@ -50,10 +45,10 @@ Ext.define('AW.view.BooksGrid', {
 
 	dockedItems: [{
 		xtype: 'pagingtoolbar',
-		store: 'AW.store.Books',
+		store: 'AW.store.Users',
 		dock: 'bottom',
 		displayInfo: true,
-		emptyMsg: 'Book not found.'
+		emptyMsg: 'User not found.'
 	}]
 
 });
