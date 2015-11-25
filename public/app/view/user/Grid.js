@@ -1,6 +1,6 @@
 Ext.define('AW.view.user.Grid', {
-	extend: 'Ext.grid.Panel',
 	alias: 'widget.usersgrid',
+	extend: 'AW.view.base.Grid',
 
 	store: 'AW.store.Users',
 
@@ -27,19 +27,6 @@ Ext.define('AW.view.user.Grid', {
 			dataIndex: 'is_employee',
 			text: 'Is employee',
 			width: 100
-		}
-	],
-
-	tbar: [
-		{
-			xtype: 'button',
-			itemId: 'add',
-			text: 'New'
-		},
-		{
-			xtype: 'button',
-			itemId: 'delete',
-			text: 'Destroy'
 		}
 	],
 

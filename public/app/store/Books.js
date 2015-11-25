@@ -1,7 +1,6 @@
 Ext.define('AW.store.Books', {
-	extend: 'Ext.data.Store',
+	extend: 'AW.store.Base',
 	model: 'AW.model.Book',
-	pageSize: 5,
 	proxy: {
 		type: 'rest',
 		format: 'json',

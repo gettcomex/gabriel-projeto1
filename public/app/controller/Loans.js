@@ -1,39 +1,40 @@
-Ext.define('AW.controller.Books', {
+Ext.define('AW.controller.Loans', {
 	extend: 'Ext.app.Controller',
 
 	models: [
-		'AW.model.Book'
+		'AW.model.Loan'
 	],
 
 	stores: [
-		'AW.store.Books',
-		'AW.store.BookBindings'
+		'AW.store.Loans'
 	],
 
 	views: [
-		'AW.view.book.Grid',
-		'AW.view.book.WindowForm'
+		'AW.view.loan.Grid',
+		'AW.view.loan.WindowForm'
 	],
 
 	init: function(application) {
 		this.control({
-			'booksgrid': {
+			'loansgrid': {
 				render: this.onGridRender,
 				itemdblclick: this.onEditClick
 			},
-			'booksgrid button#add': {
+			'loansgrid button#add': {
 				click: this.onAddClick
 			},
-			'booksgrid button#delete': {
+			'loansgrid button#delete': {
 				click: this.onDeleteClick
 			},
-			'bookwindowform button#save': {
+			'loanwindowform button#save': {
 				click: this.onSaveClick
 			},
-			'bookwindowform button#cancel': {
+			'loanwindowform button#cancel': {
 				click: this.onCancelClick
 			}
 		});
+
+		this.onAddClick(); // test
 	},
 
 	onGridRender: function(grid, eOpts) {
@@ -41,13 +42,13 @@ Ext.define('AW.controller.Books', {
 	},
 
 	openForm: function(title) {
-		return Ext.create('AW.view.book.WindowForm', {
+		return Ext.create('AW.view.loan.WindowForm', {
 			title: title
 		});
 	},
 
 	onAddClick: function(btn, e, eOpts) {
-		this.openForm('New Book');
+		this.openForm('New Loan');
 	},
 
 	onDeleteClick: function(btn, e, eOpts) {
@@ -68,7 +69,7 @@ Ext.define('AW.controller.Books', {
 	},
 
 	onEditClick: function(grid, record, item, index, e, eOpts) {
-		var win = this.openForm('Edit Book - ' + record.get('title')),
+		var win = this.openForm('Edit Loan - ' + record.get('title')),
 			form = win.down('form');
 		
 		form.loadRecord(record);
@@ -82,12 +83,12 @@ Ext.define('AW.controller.Books', {
 
 		if (form.isValid()) {
 
-			model = Ext.create('AW.model.Book', values);
+			model = Ext.create('AW.model.Loan', values);
 
 			model.save({
 				success: function(response) {
 					var record = form.getRecord(),
-						grid = Ext.ComponentQuery.query('booksgrid')[0],
+						grid = Ext.ComponentQuery.query('loansgrid')[0],
 						store = grid.getStore();
 
 					if (record) {

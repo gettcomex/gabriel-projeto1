@@ -1,8 +1,8 @@
 /*globals Ext, conf*/
-Ext.Loader.setPath('Ext',   'extjs/src');
+Ext.Loader.setPath('Ext', 'extjs/src');
 Ext.Loader.setPath('Ext.ux', 'app/ux');
 
-Ext.Loader.setPath('AW.data', 'app/data')
+Ext.Loader.setPath('AW', 'app');
 
 Ext.Loader.setConfig({
 	enabled: true,
@@ -40,16 +40,11 @@ Ext.require([
 	'Ext.tree.Panel',
 	'Ext.selection.CheckboxModel',
 	'Ext.ux.form.Rails',
-	'AW.data.JsonWriterRails'
+	'AW.data.JsonWriterRails',
+	'AW.view.base.Form',
+	'AW.view.base.Grid',
+	'AW.view.base.WindowForm'
 ]);
-
-// Ext.application({
-//  name                : 'AW',
-//  autoCreateViewport  : true,
-//  paths               : {},
-//  requires            : [],
-//  controllers         : []
-// });
 
 Ext.application({
 	name: 'AW',

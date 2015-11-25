@@ -1,70 +1,55 @@
 Ext.define('AW.view.book.Form', {
-	extend: 'Ext.window.Window',
 	alias: 'widget.bookform',
+	extend: 'AW.view.base.Form',
+	requires: [ 'AW.store.BookBindings' ],
 
-	layout: 'fit',
-	height: 250,
-	width: 350,
-	autoShow: true,
-
-	items: [{
-		xtype: 'form',
-		bodyPadding: 10,
-		defaults: {
-			anchor: '100%',
+	initComponent: function() {
+		this.defaults = Ext.apply({
 			allowBlank: false
-		},
-		items: [
-			{
-				xtype: 'hiddenfield',
-				name: 'id'
-			},
-			{
-				xtype: 'textfield',
-				name: 'title',
-				fieldLabel: 'Title',
-				maxLength: 150
-			},
-			{
-				xtype: 'textfield',
-				name: 'writer',
-				fieldLabel: 'Writer',
-				maxLength: 150
-			},
-			{
-				xtype: 'numberfield',
-				name: 'pages',
-				fieldLabel: 'Pages',
-				allowDecimals: false,
-				minValue: 1
-			},
-			{
-				xtype: 'numberfield',
-				name: 'copies',
-				fieldLabel: 'Copies',
-				allowDecimals: false,
-				minValue: 1
-			},
-			{
-				xtype: 'combo',
-				name: 'book_binding',
-				fieldLabel: 'Book binding',
-				editable: false,
-				store: 'AW.store.BookBindings',
-				displayField: 'name',
-				valueField: 'value'
-			}
-		]
-	}],
+		}, this.defaults);
 
-	buttons: [
+		this.callParent(arguments);
+	},
+
+	items: [
 		{
-			itemId: 'save',
-			text: 'Save'
+			xtype: 'hiddenfield',
+			name: 'id'
 		},
 		{
-			itemId: 'cancel',
-			text: 'Cancel'
+			xtype: 'textfield',
+			name: 'title',
+			fieldLabel: 'Title',
+			maxLength: 150
+		},
+		{
+			xtype: 'textfield',
+			name: 'writer',
+			fieldLabel: 'Writer',
+			maxLength: 150
+		},
+		{
+			xtype: 'numberfield',
+			name: 'pages',
+			fieldLabel: 'Pages',
+			allowDecimals: false,
+			minValue: 1
+		},
+		{
+			xtype: 'numberfield',
+			name: 'copies',
+			fieldLabel: 'Copies',
+			allowDecimals: false,
+			minValue: 1
+		},
+		{
+			xtype: 'combo',
+			name: 'book_binding',
+			fieldLabel: 'Book binding',
+			editable: false,
+			store: 'AW.store.BookBindings',
+			displayField: 'name',
+			valueField: 'value'
 		}
 	]
 });

@@ -1,6 +1,6 @@
 Ext.define('AW.data.JsonWriterRails', {
-	extend: 'Ext.data.JsonWriter',
 	alias: 'writer.jsonrails',
+	extend: 'Ext.data.JsonWriter',
 
 	modelName: null,
 

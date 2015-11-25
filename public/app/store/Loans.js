@@ -1,10 +1,10 @@
-Ext.define('AW.store.Users', {
+Ext.define('AW.store.Loans', {
 	extend: 'AW.store.Base',
-	model: 'AW.model.User',
+	model: 'AW.model.Loan',
 	proxy: {
 		type: 'rest',
 		format: 'json',
-		url: '/users',
+		url: '/loans',
 		reader: {
 			root: 'data'
 		}

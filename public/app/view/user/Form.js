@@ -1,71 +1,56 @@
 Ext.define('AW.view.user.Form', {
-	extend: 'Ext.window.Window',
 	alias: 'widget.userform',
+	extend: 'AW.view.base.Form',
 
-	layout: 'fit',
-	height: 250,
-	width: 350,
-	autoShow: true,
+	initComponent: function() {
+		this.defaults = Ext.apply({
+			allowBlank: false,
+			labelWidth: 150
+		}, this.defaults);
 
-	// { name: 'id', type: 'auto' },
-	// { name: 'name', type: 'string' },
-	// { name: 'email', type: 'string' },
-	// { name: 'password', type: 'string' },
-	// { name: 'is_employee', type: 'boolean' }
+		this.callParent(arguments);
+	},
 
-
-	items: [{
-		xtype: 'form',
-		bodyPadding: 10,
-		defaults: {
-			anchor: '100%',
-			allowBlank: false
-		},
-		items: [
-			{
-				xtype: 'hiddenfield',
-				name: 'id'
-			},
-			{
-				xtype: 'textfield',
-				name: 'name',
-				fieldLabel: 'Name',
-				maxLength: 150
-			},
-			{
-				xtype: 'textfield',
-				name: 'login',
-				fieldLabel: 'Login',
-				maxLength: 150
-			},
-			{
-				xtype: 'textfield',
-				name: 'email',
-				fieldLabel: 'Email',
-				maxLength: 150
-			},
-			{
-				xtype: 'textfield',
-				name: 'password',
-				fieldLabel: 'Password'
-				// ,inputType: 'password'
-			}
-			// ,{
-			// 	xtype: 'numberfield',
-			// 	name: 'is_employee',
-			// 	fieldLabel: 'is_employee'
-			// }
-		]
-	}],
-
-	buttons: [
+	items: [
 		{
-			itemId: 'save',
-			text: 'Save'
+			xtype: 'hiddenfield',
+			name: 'id'
 		},
 		{
-			itemId: 'cancel',
-			text: 'Cancel'
+			xtype: 'textfield',
+			name: 'name',
+			fieldLabel: 'Name',
+			maxLength: 150
+		},
+		{
+			xtype: 'textfield',
+			name: 'email',
+			fieldLabel: 'Email',
+			maxLength: 150
+		},
+		{
+			xtype: 'textfield',
+			name: 'login',
+			fieldLabel: 'Login',
+			maxLength: 150
+		},
+		{
+			xtype: 'textfield',
+			name: 'password',
+			fieldLabel: 'Password',
+			inputType: 'password'
+		},
+		{
+			xtype: 'textfield',
+			name: 'password_confirmation',
+			fieldLabel: 'Password Confirmation',
+			inputType: 'password'
+		},
+		{
+			xtype: 'checkbox',
+			inputValue: 1,
+			name: 'is_employee',
+			fieldLabel: 'Employee'
 		}
 	]
 });

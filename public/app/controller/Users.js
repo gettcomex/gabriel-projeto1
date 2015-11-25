@@ -11,7 +11,7 @@ Ext.define('AW.controller.Users', {
 
 	views: [
 		'AW.view.user.Grid',
-		'AW.view.user.Form'
+		'AW.view.user.WindowForm'
 	],
 
 	init: function(application) {
@@ -26,10 +26,10 @@ Ext.define('AW.controller.Users', {
 			'usersgrid button#delete': {
 				click: this.onDeleteClick
 			},
-			'userform button#save': {
+			'userwindowform button#save': {
 				click: this.onSaveClick
 			},
-			'userform button#cancel': {
+			'userwindowform button#cancel': {
 				click: this.onCancelClick
 			}
 		});
@@ -40,7 +40,7 @@ Ext.define('AW.controller.Users', {
 	},
 
 	openForm: function(title) {
-		return Ext.create('AW.view.UserForm', {
+		return Ext.create('AW.view.user.WindowForm', {
 			title: title
 		});
 	},

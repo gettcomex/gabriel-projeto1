@@ -1,6 +1,6 @@
 Ext.define('AW.view.book.Grid', {
-	extend: 'Ext.grid.Panel',
 	alias: 'widget.booksgrid',
+	extend: 'AW.view.base.Grid',
 
 	store: 'AW.store.Books',
 
@@ -32,19 +32,6 @@ Ext.define('AW.view.book.Grid', {
 			dataIndex: 'copies',
 			text: 'Copies',
 			width: 100
-		}
-	],
-
-	tbar: [
-		{
-			xtype: 'button',
-			itemId: 'add',
-			text: 'New'
-		},
-		{
-			xtype: 'button',
-			itemId: 'delete',
-			text: 'Destroy'
 		}
 	],
 
