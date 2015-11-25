@@ -2,8 +2,8 @@ Ext.define('AW.view.Viewport', {
 	extend: 'Ext.container.Viewport',
 	requires:[
 		'Ext.layout.container.Fit',
-		'AW.view.BooksGrid',
-		'AW.view.UsersGrid'
+		'AW.view.book.Grid',
+		'AW.view.user.Grid'
 	],
 
 	layout: {

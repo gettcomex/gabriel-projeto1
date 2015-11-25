@@ -11,8 +11,8 @@ Ext.define('AW.controller.Books', {
 	],
 
 	views: [
-		'AW.view.BooksGrid',
-		'AW.view.BookForm'
+		'AW.view.book.Grid',
+		'AW.view.book.Form'
 	],
 
 	init: function(application) {

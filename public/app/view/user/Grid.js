@@ -1,4 +1,4 @@
-Ext.define('AW.view.UsersGrid', {
+Ext.define('AW.view.user.Grid', {
 	extend: 'Ext.grid.Panel',
 	alias: 'widget.usersgrid',
 

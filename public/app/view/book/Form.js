@@ -1,4 +1,4 @@
-Ext.define('AW.view.BookForm', {
+Ext.define('AW.view.book.Form', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.bookform',
 

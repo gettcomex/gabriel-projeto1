@@ -1,4 +1,4 @@
-Ext.define('AW.view.UserForm', {
+Ext.define('AW.view.user.Form', {
 	extend: 'Ext.window.Window',
 	alias: 'widget.userform',
 

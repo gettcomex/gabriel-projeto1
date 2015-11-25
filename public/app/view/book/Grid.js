@@ -1,4 +1,4 @@
-Ext.define('AW.view.BooksGrid', {
+Ext.define('AW.view.book.Grid', {
 	extend: 'Ext.grid.Panel',
 	alias: 'widget.booksgrid',
 

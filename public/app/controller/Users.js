@@ -10,8 +10,8 @@ Ext.define('AW.controller.Users', {
 	],
 
 	views: [
-		'AW.view.UsersGrid',
-		'AW.view.UserForm'
+		'AW.view.user.Grid',
+		'AW.view.user.Form'
 	],
 
 	init: function(application) {
