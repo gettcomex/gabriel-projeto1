@@ -3,7 +3,10 @@ Ext.define('AW.view.loan.Grid', {
 	extend: 'Ext.grid.Panel',
 
 	requires: [
-		'AW.button.ButtonAdd'
+		'AW.button.ButtonAdd',
+		'AW.grid.column.Book',
+		'AW.grid.column.Identity',
+		'AW.grid.column.User'
 	],
 
 	mixins: {
@@ -28,22 +31,17 @@ Ext.define('AW.view.loan.Grid', {
 
 		this.columns = [
 			{
-				dataIndex: 'id',
-				text: 'ID',
+				xtype: 'identitycolumn',
 				width: 35
 			},
 			{
-				dataIndex: 'user_id',
-				text: 'User',
+				xtype: 'usercolumn',
 				width: 200,
-				flex: 1,
-				renderer: this.onRendererUser
+				flex: 1
 			},
 			{
-				dataIndex: 'book_id',
-				text: 'Book',
-				width: 200,
-				renderer: this.onRendererBook
+				xtype: 'bookcolumn',
+				width: 200
 			},
 			{
 				xtype: 'datecolumn',
@@ -62,16 +60,6 @@ Ext.define('AW.view.loan.Grid', {
 		this.mixins.pagingToolbar.constructor.call(this);
 
 		this.callParent(arguments);
-	},
-
-	onRendererUser: function(value, metaData, record) {
-		var user = record.getUser();
-		return user.get('name');
-	},
-
-	onRendererBook: function(value, metaData, record) {
-		var book = record.getBook();
-		return book.get('title');
 	}
 
 });

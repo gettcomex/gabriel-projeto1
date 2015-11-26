@@ -9,11 +9,6 @@ Ext.define('AW.view.user.Grid', {
 	initComponent: function() {
 		this.columns = [
 			{
-				dataIndex: 'id',
-				text: 'ID',
-				width: 35
-			},
-			{
 				dataIndex: 'name',
 				text: 'Name',
 				width: 170,

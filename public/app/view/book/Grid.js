@@ -10,11 +10,6 @@ Ext.define('AW.view.book.Grid', {
 
 		this.columns = [
 			{
-				dataIndex: 'id',
-				text: 'ID',
-				width: 35
-			},
-			{
 				dataIndex: 'title',
 				text: 'Title',
 				width: 170,

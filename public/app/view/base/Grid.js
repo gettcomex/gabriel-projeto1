@@ -4,7 +4,8 @@ Ext.define('AW.view.base.Grid', {
 
 	requires: [
 		'AW.button.ButtonAdd',
-		'AW.button.ButtonDelete'
+		'AW.button.ButtonDelete',
+		'AW.grid.column.Identity'
 	],
 
 	mixins: {
@@ -13,17 +14,38 @@ Ext.define('AW.view.base.Grid', {
 
 	initComponent: function() {
 
-		this.tbar = [
+		var unshiftAll = function(array, elements) {
+			return Array.prototype.unshift.apply(array, elements);
+		}
+
+		this.columns = this.columns || [];
+		unshiftAll(this.columns, this.buildColumns())
+
+		this.tbar = this.tbar || [];
+		unshiftAll(this.tbar, this.buildTbar());
+
+		this.mixins.pagingToolbar.constructor.call(this);
+
+		this.callParent(arguments);
+	},
+
+	buildColumns: function() {
+		return [
+			{
+				xtype: 'identitycolumn',
+				width: 35
+			}
+		];
+	},
+
+	buildTbar: function() {
+		return [
 			{
 				xtype: 'buttonadd'
 			},
 			{
 				xtype: 'buttondelete'
 			}
-		]
-
-		this.mixins.pagingToolbar.constructor.call(this);
-
-		this.callParent(arguments);
+		];
 	}
 });

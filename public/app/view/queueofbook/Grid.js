@@ -2,6 +2,11 @@ Ext.define('AW.view.queueofbook.Grid', {
 	alias: 'widget.queueofbooksgrid',
 	extend: 'AW.view.base.Grid',
 
+	requires: [
+		'AW.grid.column.User',
+		'AW.grid.column.Book'
+	],
+
 	store: 'AW.store.QueueOfBooks',
 	title: 'Reserves',
 
@@ -9,36 +14,17 @@ Ext.define('AW.view.queueofbook.Grid', {
 
 		this.columns = [
 			{
-				dataIndex: 'id',
-				text: 'ID',
-				width: 35
+				xtype: 'usercolumn',
+				width: 200,
+				flex: 1
 			},
 			{
-				dataIndex: 'user_id',
-				text: 'User',
-				width: 200,
-				flex: 1,
-				renderer: this.onRendererUser
-			},
-			{
-				dataIndex: 'book_id',
-				text: 'Book',
-				width: 200,
-				renderer: this.onRendererBook
+				xtype: 'bookcolumn',
+				width: 200
 			}
 		];
 
 		this.callParent(arguments);
-	},
-	
-	onRendererUser: function(value, metaData, record) {
-		var user = record.getUser();
-		return user.get('name');
-	},
-
-	onRendererBook: function(value, metaData, record) {
-		var book = record.getBook();
-		return book.get('title');
 	}
 
 });

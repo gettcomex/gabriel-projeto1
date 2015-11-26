@@ -53,7 +53,9 @@ Ext.application({
 });
 
 Ext.onReady(function() {
+	var token = Ext.select("meta[name='csrf-token']").first().getAttribute('content');
+	
 	Ext.Ajax.extraParams = {
-		authenticity_token : Ext.select("meta[name='csrf-token']").first().getAttribute('content')
+		authenticity_token : token
 	};
 });
