@@ -1,4 +1,3 @@
-
 json.(loan, :id, :book_id, :user_id, :starts_at, :end_at)
 
 json.book do

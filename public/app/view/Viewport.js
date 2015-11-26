@@ -4,7 +4,8 @@ Ext.define('AW.view.Viewport', {
 		'Ext.layout.container.Fit',
 		'AW.view.book.Grid',
 		'AW.view.loan.Grid',
-		'AW.view.user.Grid'
+		'AW.view.user.Grid',
+		'AW.view.queueofbook.Grid'
 	],
 
 	layout: {
@@ -14,11 +15,13 @@ Ext.define('AW.view.Viewport', {
 	items: [{
 		xtype: 'tabpanel',
 		title: 'Library',
-		activeTab: 1, // TODO: renderizando a página que está sendo feita agora
+		activeTab: 2, // TODO: renderizando a página que está sendo feita agora
 		items: [{
 			xtype: 'booksgrid'
 		}, {
 			xtype: 'loansgrid'
+		}, {
+			xtype: 'queueofbooksgrid'
 		}, {
 			xtype: 'usersgrid'
 		}]
