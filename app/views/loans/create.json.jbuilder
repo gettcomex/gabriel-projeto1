@@ -1,0 +1,1 @@
+json.partial! 'shared/success_message', resource: @loan

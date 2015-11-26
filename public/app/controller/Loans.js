@@ -2,11 +2,14 @@ Ext.define('AW.controller.Loans', {
 	extend: 'Ext.app.Controller',
 
 	models: [
-		'AW.model.Loan'
+		'AW.model.Loan',
+		'AW.model.User'
 	],
 
 	stores: [
-		'AW.store.Loans'
+		'AW.store.Loans',
+		'AW.store.Books',
+		'AW.store.Users'
 	],
 
 	views: [
@@ -17,14 +20,13 @@ Ext.define('AW.controller.Loans', {
 	init: function(application) {
 		this.control({
 			'loansgrid': {
-				render: this.onGridRender,
-				itemdblclick: this.onEditClick
+				render: this.onGridRender
 			},
 			'loansgrid button#add': {
 				click: this.onAddClick
 			},
-			'loansgrid button#delete': {
-				click: this.onDeleteClick
+			'loansgrid button#renew': {
+				click: this.onRenewClick
 			},
 			'loanwindowform button#save': {
 				click: this.onSaveClick
@@ -33,8 +35,6 @@ Ext.define('AW.controller.Loans', {
 				click: this.onCancelClick
 			}
 		});
-
-		this.onAddClick(); // test
 	},
 
 	onGridRender: function(grid, eOpts) {
@@ -51,28 +51,35 @@ Ext.define('AW.controller.Loans', {
 		this.openForm('New Loan');
 	},
 
-	onDeleteClick: function(btn, e, eOpts) {
+	onRenewClick: function(btn, e, eOpts) {
 		var grid = btn.up('grid'),
-			record = grid.getSelectionModel().getSelection()[0],
-			store = grid.getStore();
+			record = grid.getSelectionModel().getSelection()[0];
 
-		record.destroy({
-			success: function(response) {
-				var store = grid.getStore();
-				store.reload();
-			},
-			failure: function(response) {
-				// TODO: isolar comportamento repetitivo.
-				Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
-			}
-		});
-	},
+		if (record) {
 
-	onEditClick: function(grid, record, item, index, e, eOpts) {
-		var win = this.openForm('Edit Loan - ' + record.get('title')),
-			form = win.down('form');
-		
-		form.loadRecord(record);
+			Ext.Ajax.request({
+				url: '/loans/' + record.get('id') + '/renew',
+				method: 'PUT',
+				success: function(response) {
+					var loan = Ext.decode(response.responseText)
+						formatedEndAt = null;
+
+					loan.end_at = Ext.Date.parse(loan.end_at, 'Y-m-d');
+					record.set(loan);
+
+					formatedEndAt = Ext.Date.format(loan.end_at, 'm/d/Y');
+
+					Ext.Msg.alert(
+						'Success',
+						'Loan was successfully renewed. New date: ' + formatedEndAt
+					);
+				},
+				failure: function(response) {
+					// TODO: isolar comportamento repetitivo.
+					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
+				}
+			});
+		}
 	},
 	
 	onSaveClick: function(btn, e, eOpts) {

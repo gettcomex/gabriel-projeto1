@@ -1,35 +1,79 @@
 Ext.define('AW.view.loan.Grid', {
 	alias: 'widget.loansgrid',
-	extend: 'AW.view.base.Grid',
+	extend: 'Ext.grid.Panel',
+
+	requires: [
+		'AW.button.ButtonAdd'
+	],
 
 	store: 'AW.store.Loans',
-
 	title: 'Loans',
 
-	columns: [
+	initComponent: function() {
+
+		this.columns = [
+			{
+				dataIndex: 'id',
+				text: 'ID',
+				width: 35
+			},
+			{
+				dataIndex: 'user_id',
+				text: 'User',
+				width: 200,
+				flex: 1,
+				renderer: this.onRendererUser
+			},
+			{
+				dataIndex: 'book_id',
+				text: 'Book',
+				width: 200,
+				renderer: this.onRendererBook
+			},
+			{
+				xtype:'datecolumn',
+				dataIndex: 'starts_at',
+				text: 'Starts at',
+				width: 200
+			},
+			{
+				xtype:'datecolumn',
+				dataIndex: 'end_at',
+				text: 'End at',
+				width: 200
+			}
+		];
+
+		this.callParent(arguments);
+	},
+
+	tbar: [
 		{
-			dataIndex: 'id',
-			text: 'ID',
-			width: 35
+			xtype: 'buttonadd'
 		},
 		{
-			dataIndex: 'starts_at',
-			text: 'Starts at',
-			width: 200
-		},
-		{
-			dataIndex: 'end_at',
-			text: 'End at',
-			width: 200
+			xtype: 'button',
+			itemId: 'renew',
+			text: 'Renew'
 		}
 	],
 
-	dockedItems: [{
+	dockedItems : [{
 		xtype: 'pagingtoolbar',
 		store: 'AW.store.Loans',
 		dock: 'bottom',
 		displayInfo: true,
 		emptyMsg: 'Loan not found.'
-	}]
+	}],
+
+	onRendererUser: function(value, metaData, record) {
+		var user = record.getUser();
+		return user.get('name');
+	},
+
+	onRendererBook: function(value, metaData, record) {
+		var book = record.getBook();
+		return book.get('title');
+	}
 
 });

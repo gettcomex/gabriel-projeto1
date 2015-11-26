@@ -11,8 +11,8 @@ Ext.define('AW.Application', {
 
 	controllers: [
 		'Books',
-		'Loans',
-		'Users'
+		'Users',
+		'Loans'
 	],
 
 	stores: []

@@ -10,7 +10,7 @@ Ext.define('AW.view.loan.Form', {
 		this.defaults = Ext.apply({
 			allowBlank: false
 		}, this.defaults);
-
+		
 		this.callParent(arguments);
 	},
 
@@ -24,22 +24,10 @@ Ext.define('AW.view.loan.Form', {
 			name: 'book_id',
 			fieldLabel: 'Book'
 		},
-		// {
-		// 	xtype: 'combousers',
-		// 	name: 'user_id',
-		// 	fieldLabel: 'User'
-		// },
 		{
-			xtype: 'datefield',
-			name: 'starts_at',
-			fieldLabel: 'Starts at',
-			maxLength: 150
-		},
-		{
-			xtype: 'datefield',
-			name: 'end_at',
-			fieldLabel: 'End at',
-			maxLength: 150
+			xtype: 'combousers',
+			name: 'user_id',
+			fieldLabel: 'User'
 		}
 	]
 });

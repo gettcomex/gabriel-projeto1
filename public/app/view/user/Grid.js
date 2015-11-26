@@ -22,11 +22,6 @@ Ext.define('AW.view.user.Grid', {
 			dataIndex: 'email',
 			text: 'Email',
 			width: 250
-		},
-		{
-			dataIndex: 'is_employee',
-			text: 'Is employee',
-			width: 100
 		}
 	],
 

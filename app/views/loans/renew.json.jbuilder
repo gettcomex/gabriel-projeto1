@@ -1,0 +1,1 @@
+json.(@loan, :end_at)

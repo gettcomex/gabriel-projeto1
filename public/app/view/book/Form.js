@@ -1,7 +1,7 @@
 Ext.define('AW.view.book.Form', {
 	alias: 'widget.bookform',
 	extend: 'AW.view.base.Form',
-	requires: [ 'AW.store.BookBindings' ],
+	requires: [ 'AW.form.field.ComboBookBindings' ],
 
 	initComponent: function() {
 		this.defaults = Ext.apply({
@@ -43,13 +43,9 @@ Ext.define('AW.view.book.Form', {
 			minValue: 1
 		},
 		{
-			xtype: 'combo',
+			xtype: 'combobookbindings',
 			name: 'book_binding',
-			fieldLabel: 'Book binding',
-			editable: false,
-			store: 'AW.store.BookBindings',
-			displayField: 'name',
-			valueField: 'value'
+			fieldLabel: 'Book binding'
 		}
 	]
 });

@@ -54,20 +54,22 @@ Ext.define('AW.controller.Users', {
 			record = grid.getSelectionModel().getSelection()[0],
 			store = grid.getStore();
 
-		record.destroy({
-			success: function(response) {
-				var store = grid.getStore();
-				store.reload();
-			},
-			failure: function(response) {
-				// TODO: isolar comportamento repetitivo.
-				Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
-			}
-		});
+		if (record) {
+			record.destroy({
+				success: function(response) {
+					var store = grid.getStore();
+					store.reload();
+				},
+				failure: function(response) {
+					// TODO: isolar comportamento repetitivo.
+					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
+				}
+			});
+		}
 	},
 
 	onEditClick: function(grid, record, item, index, e, eOpts) {
-		var win = this.openForm('Edit User - ' + record.get('title')),
+		var win = this.openForm('Edit User - ' + record.get('name')),
 			form = win.down('form');
 		
 		form.loadRecord(record);

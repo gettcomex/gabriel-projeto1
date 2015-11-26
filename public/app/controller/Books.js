@@ -55,16 +55,18 @@ Ext.define('AW.controller.Books', {
 			record = grid.getSelectionModel().getSelection()[0],
 			store = grid.getStore();
 
-		record.destroy({
-			success: function(response) {
-				var store = grid.getStore();
-				store.reload();
-			},
-			failure: function(response) {
-				// TODO: isolar comportamento repetitivo.
-				Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
-			}
-		});
+		if (record) {
+			record.destroy({
+				success: function(response) {
+					var store = grid.getStore();
+					store.reload();
+				},
+				failure: function(response) {
+					// TODO: isolar comportamento repetitivo.
+					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
+				}
+			});
+		}
 	},
 
 	onEditClick: function(grid, record, item, index, e, eOpts) {

@@ -2,17 +2,17 @@ Ext.define('AW.view.base.Grid', {
 	alias: 'widget.basegrid',
 	extend: 'Ext.grid.Panel',
 
+	requires: [
+		'AW.button.ButtonAdd',
+		'AW.button.ButtonDelete'
+	],
+
 	tbar: [
 		{
-			xtype: 'button',
-			itemId: 'add',
-			text: 'New'
+			xtype: 'buttonadd'
 		},
 		{
-			xtype: 'button',
-			itemId: 'delete',
-			text: 'Destroy'
+			xtype: 'buttondelete'
 		}
 	]
-
 });

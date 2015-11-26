@@ -3,7 +3,7 @@ Ext.define('AW.view.loan.WindowForm', {
 	extend: 'AW.view.base.WindowForm',
 	requires: [ 'AW.view.loan.Form' ],
 
-	height: 250,
+	height: 175,
 	width: 500,
 
 	items: [{
