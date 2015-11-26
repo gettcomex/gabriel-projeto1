@@ -6,10 +6,25 @@ Ext.define('AW.view.loan.Grid', {
 		'AW.button.ButtonAdd'
 	],
 
+	mixins: {
+		pagingToolbar: 'AW.view.base.util.toolbar.PagingBase'
+	},
+
 	store: 'AW.store.Loans',
 	title: 'Loans',
 
 	initComponent: function() {
+
+		this.tbar = [
+			{
+				xtype: 'buttonadd'
+			},
+			{
+				xtype: 'button',
+				itemId: 'renew',
+				text: 'Renew'
+			}
+		];
 
 		this.columns = [
 			{
@@ -31,40 +46,23 @@ Ext.define('AW.view.loan.Grid', {
 				renderer: this.onRendererBook
 			},
 			{
-				xtype:'datecolumn',
+				xtype: 'datecolumn',
 				dataIndex: 'starts_at',
 				text: 'Starts at',
 				width: 200
 			},
 			{
-				xtype:'datecolumn',
+				xtype: 'datecolumn',
 				dataIndex: 'end_at',
 				text: 'End at',
 				width: 200
 			}
 		];
 
+		this.mixins.pagingToolbar.constructor.call(this);
+
 		this.callParent(arguments);
 	},
-
-	tbar: [
-		{
-			xtype: 'buttonadd'
-		},
-		{
-			xtype: 'button',
-			itemId: 'renew',
-			text: 'Renew'
-		}
-	],
-
-	dockedItems : [{
-		xtype: 'pagingtoolbar',
-		store: 'AW.store.Loans',
-		dock: 'bottom',
-		displayInfo: true,
-		emptyMsg: 'Loan not found.'
-	}],
 
 	onRendererUser: function(value, metaData, record) {
 		var user = record.getUser();

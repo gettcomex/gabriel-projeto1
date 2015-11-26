@@ -7,12 +7,23 @@ Ext.define('AW.view.base.Grid', {
 		'AW.button.ButtonDelete'
 	],
 
-	tbar: [
-		{
-			xtype: 'buttonadd'
-		},
-		{
-			xtype: 'buttondelete'
-		}
-	]
+	mixins: {
+		pagingToolbar: 'AW.view.base.util.toolbar.PagingBase'
+	},
+
+	initComponent: function() {
+
+		this.tbar = [
+			{
+				xtype: 'buttonadd'
+			},
+			{
+				xtype: 'buttondelete'
+			}
+		]
+
+		this.mixins.pagingToolbar.constructor.call(this);
+
+		this.callParent(arguments);
+	}
 });

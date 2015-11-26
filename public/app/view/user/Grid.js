@@ -6,31 +6,27 @@ Ext.define('AW.view.user.Grid', {
 
 	title: 'Users',
 
-	columns: [
-		{
-			dataIndex: 'id',
-			text: 'ID',
-			width: 35
-		},
-		{
-			dataIndex: 'name',
-			text: 'Name',
-			width: 170,
-			flex: 1
-		},
-		{
-			dataIndex: 'email',
-			text: 'Email',
-			width: 250
-		}
-	],
+	initComponent: function() {
+		this.columns = [
+			{
+				dataIndex: 'id',
+				text: 'ID',
+				width: 35
+			},
+			{
+				dataIndex: 'name',
+				text: 'Name',
+				width: 170,
+				flex: 1
+			},
+			{
+				dataIndex: 'email',
+				text: 'Email',
+				width: 250
+			}
+		];
 
-	dockedItems: [{
-		xtype: 'pagingtoolbar',
-		store: 'AW.store.Users',
-		dock: 'bottom',
-		displayInfo: true,
-		emptyMsg: 'User not found.'
-	}]
+		this.callParent(arguments);
+	}
 
 });

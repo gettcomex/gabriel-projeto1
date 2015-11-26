@@ -30,15 +30,7 @@ Ext.define('AW.view.queueofbook.Grid', {
 
 		this.callParent(arguments);
 	},
-
-	dockedItems : [{
-		xtype: 'pagingtoolbar',
-		store: 'AW.store.QueueOfBooks',
-		dock: 'bottom',
-		displayInfo: true,
-		emptyMsg: 'Reserve not found.'
-	}],
-
+	
 	onRendererUser: function(value, metaData, record) {
 		var user = record.getUser();
 		return user.get('name');
