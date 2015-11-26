@@ -45,12 +45,14 @@ Ext.define('AW.view.loan.Grid', {
 			},
 			{
 				xtype: 'datecolumn',
+				format: 'd/m/Y',
 				dataIndex: 'starts_at',
 				text: 'Starts at',
 				width: 200
 			},
 			{
 				xtype: 'datecolumn',
+				format: 'd/m/Y',
 				dataIndex: 'end_at',
 				text: 'End at',
 				width: 200

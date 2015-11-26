@@ -24,6 +24,7 @@ Ext.define('AW.view.user.Form', {
 		},
 		{
 			xtype: 'textfield',
+			vtype: 'email',
 			name: 'email',
 			fieldLabel: 'Email',
 			maxLength: 150

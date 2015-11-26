@@ -67,7 +67,7 @@ Ext.define('AW.controller.Loans', {
 					loan.end_at = Ext.Date.parse(loan.end_at, 'Y-m-d');
 					record.set(loan);
 
-					formatedEndAt = Ext.Date.format(loan.end_at, 'm/d/Y');
+					formatedEndAt = Ext.Date.format(loan.end_at, 'd/m/Y');
 
 					Ext.Msg.alert(
 						'Success',
