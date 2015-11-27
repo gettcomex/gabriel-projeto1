@@ -41,6 +41,7 @@ Ext.require([
 	'Ext.selection.CheckboxModel',
 	'Ext.ux.form.Rails',
 	'AW.data.JsonWriterRails',
+	'AW.store.Users',
 	'AW.view.base.Form',
 	'AW.view.base.Grid',
 	'AW.view.base.WindowForm'
@@ -52,6 +53,8 @@ Ext.onReady(function() {
 	Ext.Ajax.extraParams = {
 		authenticity_token : token
 	};
+
+	AW.store.Users.loadCurrentUser();
 
 	Ext.application({
 		name: 'AW',

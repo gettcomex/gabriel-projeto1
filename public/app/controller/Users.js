@@ -121,13 +121,8 @@ Ext.define('AW.controller.Users', {
 	},
 
 	onShowRender: function(form, eOpts) {
-		// TODO: Ajustar para carregar o Usuário atual.
-		var record = Ext.create('AW.model.User', {
-			name: 'John Doe',
-			login: 'johndoe',
-			email: 'john.doe@gmail.com'
-		});
-		
+		var record = AW.store.Users.getCurrentUser();
+
 		form.loadRecord(record);
 	}
 });

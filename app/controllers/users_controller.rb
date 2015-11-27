@@ -39,6 +39,10 @@ class UsersController < ApplicationController
 		flash[:alerts] = @user.flash_alerts
 		respond_with @user
 	end
+
+	def me
+		render partial: "users/user", locals: { user: current_user }
+	end
 private
 	def resource_params
 		params.permit(user: permited_fields)[:user]

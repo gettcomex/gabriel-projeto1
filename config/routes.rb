@@ -3,6 +3,7 @@ LibrarySystem::Application.routes.draw do
 	root to: "pages#index"
 
 	match "/home" => "pages#index", :as => :home
+	match "/users/me" => "users#me", :via => :get
 
 	resources :users
 	resources :books
