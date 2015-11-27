@@ -36,6 +36,8 @@ Ext.define('AW.view.user.Form', {
 			},
 			{
 				xtype: 'textfield',
+				vtype: 'password',
+				initialPassField: 'password',
 				name: 'password_confirmation',
 				fieldLabel: 'Password Confirmation',
 				inputType: 'password'
