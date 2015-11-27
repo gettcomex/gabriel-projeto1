@@ -10,24 +10,20 @@ Ext.define('AW.view.loan.Form', {
 		this.defaults = Ext.apply({
 			allowBlank: false
 		}, this.defaults);
+
+		this.items = [
+			{
+				xtype: 'combobooks',
+				name: 'book_id',
+				fieldLabel: 'Book'
+			},
+			{
+				xtype: 'combousers',
+				name: 'user_id',
+				fieldLabel: 'User'
+			}
+		];
 		
 		this.callParent(arguments);
-	},
-
-	items: [
-		{
-			xtype: 'hiddenfield',
-			name: 'id'
-		},
-		{
-			xtype: 'combobooks',
-			name: 'book_id',
-			fieldLabel: 'Book'
-		},
-		{
-			xtype: 'combousers',
-			name: 'user_id',
-			fieldLabel: 'User'
-		}
-	]
+	}
 });
