@@ -5,6 +5,7 @@ Ext.define('AW.view.base.WindowForm', {
 
 	layout: 'fit',
 	autoShow: true,
+	modal: true,
 
 	buttons: [
 		{
