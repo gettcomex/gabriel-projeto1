@@ -1,5 +1,8 @@
 Ext.define('AW.model.Loan', {
 	extend: 'Ext.data.Model',
+
+	requires: [ 'AW.data.proxy.RestLoans' ],
+	
 	fields: [
 		{ name: 'id', type: 'auto' },
 		{ name: 'book_id', type: 'int' },
@@ -28,11 +31,6 @@ Ext.define('AW.model.Loan', {
 	],
 
 	proxy: {
-		type: 'rest',
-		url: '/loans',
-		writer: {
-			type: 'jsonrails',
-			modelName: 'loan'
-		}
+		type: 'restloans'
 	}
 });

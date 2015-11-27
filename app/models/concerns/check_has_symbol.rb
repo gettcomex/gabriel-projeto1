@@ -8,7 +8,6 @@ protected
 		else
 			error = message
 
-			self.flash_alerts << error
 			errors.add(:base, error)
 
 			false

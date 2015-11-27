@@ -15,14 +15,15 @@ class QueueOfBooksController < ApplicationController
 
 	def create
 		@queue_of_book = QueueOfBook.new(params[:queue_of_book])
+		@queue_of_book.save
 
-		flash[:notice] = t_successfully_created_local if @queue_of_book.save
 		render_success_message @queue_of_book
 	end
 
 	def destroy
 		@queue_of_book = QueueOfBook.find(params[:id])
 		@queue_of_book.destroy
+		
 		render_success_message @queue_of_book
 	end
 

@@ -1,5 +1,8 @@
 Ext.define('AW.model.User', {
 	extend: 'Ext.data.Model',
+
+	requires: [ 'AW.data.proxy.RestUsers' ],
+
 	fields: [
 		{ name: 'id', type: 'auto' },
 		{ name: 'name', type: 'string' },
@@ -8,12 +11,8 @@ Ext.define('AW.model.User', {
 		{ name: 'password', type: 'string' },
 		{ name: 'is_employee', type: 'boolean' }
 	],
+	
 	proxy: {
-		type: 'rest',
-		url: '/users',
-		writer: {
-			type: 'jsonrails',
-			modelName: 'user'
-		}
+		type: 'restusers'
 	}
 });

@@ -15,8 +15,8 @@ class LoansController < ApplicationController
 
 	def create
 		@loan = Loan.new(params[:loan])
+		@loan.save
 		
-		flash[:notice] = t_successfully_created_local if @loan.save
 		render_success_message @loan
 	end
 
@@ -24,14 +24,9 @@ class LoansController < ApplicationController
 		@loan = Loan.find(params[:loan_id])
 		authorize! :renew, @loan
 		
-		if @loan.book.has_queue_of_books?
-			flash[:alerts] = ['Loans with reserve can not be renewed.']
-		else
-			@loan.renew
-			flash[:notice] = "Loan was successfully renewed. New date: #{@loan.end_at}"
-		end
+		@loan.renew
 
-		render_show @loan
+		respond_with @loan
 	end
 
 	def report

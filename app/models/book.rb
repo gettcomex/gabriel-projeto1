@@ -4,8 +4,6 @@ class Book < ActiveRecord::Base
 	include HasManyLoans
 	include HasManyQueueOfBooks
 
-	attr_accessor :flash_alerts
-
 	validates :title, presence: true, length: { maximum: 150 }
 	validates :writer, presence: true, length: { maximum: 150 }
 	validates :pages, numericality: { only_integer: true, greater_than: 0 }
@@ -44,15 +42,14 @@ protected
 	end
 
 	def check_can_be_destroyed!
-		self.flash_alerts = []
 		check_has_loans! & check_has_queue_of_books!
 	end
 
 	def check_has_loans!
-		super "Cannot delete booking with loans."
+		super "Cannot delete booking with loans"
 	end
 
 	def check_has_queue_of_books!
-		super "Cannot delete booking with reserves."
+		super "Cannot delete booking with reserves"
 	end
 end

@@ -1,5 +1,8 @@
 Ext.define('AW.model.Book', {
 	extend: 'Ext.data.Model',
+
+	requires: [ 'AW.data.proxy.RestBooks' ],
+
 	fields: [
 		{ name: 'id', type: 'auto' },
 		{ name: 'title', type: 'string' },
@@ -8,12 +11,8 @@ Ext.define('AW.model.Book', {
 		{ name: 'book_binding', type: 'int' },
 		{ name: 'copies', type: 'int' }
 	],
+
 	proxy: {
-		type: 'rest',
-		url: '/books',
-		writer: {
-			type: 'jsonrails',
-			modelName: 'book'
-		}
+		type: 'restbooks'
 	}
 });

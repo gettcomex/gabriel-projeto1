@@ -50,6 +50,13 @@ Ext.define('AW.controller.Books', {
 		this.openForm('New Book');
 	},
 
+	onEditClick: function(grid, record, item, index, e, eOpts) {
+		var win = this.openForm('Edit Book - ' + record.get('title')),
+			form = win.down('form');
+		
+		form.loadRecord(record);
+	},
+
 	onDeleteClick: function(btn, e, eOpts) {
 		var grid = btn.up('grid'),
 			record = grid.getSelectionModel().getSelection()[0],
@@ -60,20 +67,9 @@ Ext.define('AW.controller.Books', {
 				success: function(response) {
 					var store = grid.getStore();
 					store.reload();
-				},
-				failure: function(response) {
-					// TODO: isolar comportamento repetitivo.
-					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
 				}
 			});
 		}
-	},
-
-	onEditClick: function(grid, record, item, index, e, eOpts) {
-		var win = this.openForm('Edit Book - ' + record.get('title')),
-			form = win.down('form');
-		
-		form.loadRecord(record);
 	},
 	
 	onSaveClick: function(btn, e, eOpts) {
@@ -100,10 +96,6 @@ Ext.define('AW.controller.Books', {
 					}
 
 					win.close();
-				},
-				failure: function(response) {
-					// TODO: isolar comportamento repetitivo.
-					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
 				}
 			});
 		}

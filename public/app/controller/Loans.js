@@ -61,24 +61,28 @@ Ext.define('AW.controller.Loans', {
 				url: '/loans/' + record.get('id') + '/renew',
 				method: 'PUT',
 				success: function(response) {
-					var loan = Ext.decode(response.responseText)
+					var result = Ext.decode(response.responseText)
+						loan = result.data,
 						formatedEndAt = null;
 
-					loan.end_at = Ext.Date.parse(loan.end_at, 'Y-m-d');
-					record.set(loan);
+					if (result.success) {
 
-					formatedEndAt = Ext.Date.format(loan.end_at, 'd/m/Y');
+						loan.end_at = Ext.Date.parse(loan.end_at, 'Y-m-d');
+						record.set(loan);
 
-					Ext.Msg.alert(
-						'Success',
-						'Loan was successfully renewed. New date: ' + formatedEndAt
-					);
-				},
-				failure: function(response) {
-					// TODO: isolar comportamento repetitivo.
-					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
+						formatedEndAt = Ext.Date.format(loan.end_at, 'd/m/Y');
+
+						Ext.Msg.alert(
+							'Success',
+							'Loan was successfully renewed. New date: ' + formatedEndAt
+						);
+					}
+					else {
+						AW.ResponseErrorBox.alert('ERROR', response);
+					}
 				}
 			});
+
 		}
 	},
 	
@@ -106,10 +110,6 @@ Ext.define('AW.controller.Loans', {
 					}
 
 					win.close();
-				},
-				failure: function(response) {
-					// TODO: isolar comportamento repetitivo.
-					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
 				}
 			});
 		}

@@ -41,10 +41,12 @@ Ext.require([
 	'Ext.selection.CheckboxModel',
 	'Ext.ux.form.Rails',
 	'AW.data.JsonWriterRails',
+	'AW.data.proxy.RestRails',
 	'AW.store.Users',
 	'AW.view.base.Form',
 	'AW.view.base.Grid',
-	'AW.view.base.WindowForm'
+	'AW.view.base.WindowForm',
+	'AW.window.ResponseErrorBox'
 ]);
 
 Ext.onReady(function() {

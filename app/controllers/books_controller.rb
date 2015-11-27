@@ -13,21 +13,22 @@ class BooksController < ApplicationController
 
 	def create
 		@book = Book.new(params[:book])
+		@book.save
 
-		flash[:notice] = t_successfully_created_local if @book.save
 		render_success_message @book
 	end
 
 	def update
 		@book = Book.find(params[:id])
-		flash[:notice] = t_successfully_updated_local if @book.update_attributes(params[:book])
+		@book.update_attributes(params[:book])
+
 		render_success_message @book
 	end
 
 	def destroy
 		@book = Book.find(params[:id])
 		@book.destroy
-		flash[:alerts] = @book.flash_alerts
+
 		render_success_message @book
 	end
 

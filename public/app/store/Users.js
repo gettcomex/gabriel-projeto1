@@ -1,13 +1,11 @@
 Ext.define('AW.store.Users', {
 	extend: 'AW.store.Base',
+
+	requires: [ 'AW.data.proxy.RestUsers' ],
+
 	model: 'AW.model.User',
 	proxy: {
-		type: 'rest',
-		format: 'json',
-		url: '/users',
-		reader: {
-			root: 'data'
-		}
+		type: 'restusers'
 	},
 
 	statics: {

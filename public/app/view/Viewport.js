@@ -16,7 +16,6 @@ Ext.define('AW.view.Viewport', {
 	items: [{
 		xtype: 'tabpanel',
 		title: 'Library',
-		activeTab: 4,// TODO: renderizando a página que está sendo feita agora
 		items: [
 			{
 				xtype: 'booksgrid',
@@ -28,7 +27,7 @@ Ext.define('AW.view.Viewport', {
 			},
 			{
 				xtype: 'queueofbooksgrid',
-				title: 'Reservers'
+				title: 'Reserves'
 			},
 			{
 				xtype: 'usersgrid',

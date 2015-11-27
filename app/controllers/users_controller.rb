@@ -14,20 +14,20 @@ class UsersController < ApplicationController
 	def create
 		@user = User.new(resource_params)
 
-		flash[:notice] = t_successfully_created_local if @user.save
+		@user.save
 		render_success_message @user
 	end
 
 	def update
 		@user = User.find(params[:id])
-		flash[:notice] = t_successfully_updated_local if @user.update_attributes(resource_params)
+		@user.update_attributes(resource_params)
 		render_success_message @user
 	end
 
 	def destroy
 		@user = User.find(params[:id])
 		@user.destroy
-		flash[:alerts] = @user.flash_alerts
+
 		render_success_message @user
 	end
 

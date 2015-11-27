@@ -61,10 +61,6 @@ Ext.define('AW.controller.QueueOfBooks', {
 				success: function(response) {
 					var store = grid.getStore();
 					store.reload();
-				},
-				failure: function(response) {
-					// TODO: isolar comportamento repetitivo.
-					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
 				}
 			});
 		}
@@ -94,10 +90,6 @@ Ext.define('AW.controller.QueueOfBooks', {
 					}
 
 					win.close();
-				},
-				failure: function(response) {
-					// TODO: isolar comportamento repetitivo.
-					Ext.Msg.alert('Error', 'Ocorreu algum problema no servidor.');
 				}
 			});
 		}
