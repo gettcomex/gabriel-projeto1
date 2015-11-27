@@ -21,5 +21,10 @@ Ext.define('AW.view.user.Show', {
 			name: 'login',
 			fieldLabel: 'Login'
 		}
-	]
+	],
+
+	tbar: [{
+		itemId: 'logout',
+		text: 'Logout'
+	}]
 });

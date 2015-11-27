@@ -1,9 +1,0 @@
-<% if flash[:notice].present? %>
-	<p id="notice"><%= flash[:notice] %></p>
-<% end %>
-
-<% if flash[:alerts].present? && flash[:alerts].any? %>
-	<% flash[:alerts].each { |alert| %>
-		<p id="alert"><%= alert %></p>
-	<% } %>
-<% end %>

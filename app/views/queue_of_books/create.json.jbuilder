@@ -1,1 +1,0 @@
-json.partial! 'shared/success_message', resource: @queue_of_book

@@ -35,6 +35,9 @@ Ext.define('AW.controller.Users', {
 			},
 			'usershow': {
 				afterrender: this.onShowRender
+			},
+			'usershow button#logout': {
+				click: this.onLogoutClick
 			}
 		});
 	},
@@ -124,5 +127,15 @@ Ext.define('AW.controller.Users', {
 		var record = AW.store.Users.getCurrentUser();
 
 		form.loadRecord(record);
+	},
+
+	onLogoutClick: function(btn, e, eOpts) {
+		Ext.Ajax.request({
+			url: '/accounts/sign_out',
+			method: 'DELETE',
+			callback: function() {
+				window.location.reload();
+			}
+		});
 	}
 });
