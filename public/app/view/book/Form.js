@@ -4,10 +4,10 @@ Ext.define('AW.view.book.Form', {
 	requires: [ 'AW.form.field.ComboBookBindings' ],
 
 	initComponent: function() {
-		this.defaults = Ext.apply({
+		this.defaults = Ext.applyIf(this.defaults || {}, {
 			allowBlank: false
-		}, this.defaults);
-
+		});
+		
 		this.items = [
 			{
 				xtype: 'textfield',

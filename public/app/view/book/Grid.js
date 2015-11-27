@@ -4,8 +4,6 @@ Ext.define('AW.view.book.Grid', {
 
 	store: 'AW.store.Books',
 
-	title: 'Books',
-
 	initComponent: function() {
 
 		this.columns = [

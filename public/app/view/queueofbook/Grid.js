@@ -8,7 +8,6 @@ Ext.define('AW.view.queueofbook.Grid', {
 	],
 
 	store: 'AW.store.QueueOfBooks',
-	title: 'Reserves',
 
 	initComponent: function() {
 

@@ -46,16 +46,16 @@ Ext.require([
 	'AW.view.base.WindowForm'
 ]);
 
-Ext.application({
-	name: 'AW',
-	extend: 'AW.Application',
-	autoCreateViewport: true
-});
-
 Ext.onReady(function() {
 	var token = Ext.select("meta[name='csrf-token']").first().getAttribute('content');
 	
 	Ext.Ajax.extraParams = {
 		authenticity_token : token
 	};
+
+	Ext.application({
+		name: 'AW',
+		extend: 'AW.Application',
+		autoCreateViewport: true
+	});
 });

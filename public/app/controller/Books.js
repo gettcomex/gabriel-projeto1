@@ -54,7 +54,7 @@ Ext.define('AW.controller.Books', {
 		var grid = btn.up('grid'),
 			record = grid.getSelectionModel().getSelection()[0],
 			store = grid.getStore();
-
+		
 		if (record) {
 			record.destroy({
 				success: function(response) {

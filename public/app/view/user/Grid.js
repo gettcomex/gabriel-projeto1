@@ -4,8 +4,6 @@ Ext.define('AW.view.user.Grid', {
 
 	store: 'AW.store.Users',
 
-	title: 'Users',
-
 	initComponent: function() {
 		this.columns = [
 			{

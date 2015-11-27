@@ -3,10 +3,10 @@ Ext.define('AW.view.user.Form', {
 	extend: 'AW.view.base.Form',
 
 	initComponent: function() {
-		this.defaults = Ext.apply({
+		this.defaults = Ext.applyIf(this.defaults || {}, {
 			allowBlank: false,
 			labelWidth: 150
-		}, this.defaults);
+		});
 
 		this.items = [
 			{

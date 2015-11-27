@@ -9,8 +9,8 @@
 </head>
 <body>
 
-	<% if user_signed_in? %>
-		<div id="main-nav">
+	<% #if user_signed_in? %>
+		<!-- <div id="main-nav">
 			<ul>
 				<li>
 					<%= link_to 'Home', root_path %>
@@ -48,10 +48,10 @@
 
 		<div id="user-bar">
 			<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-		</div>
-	<% end %>
+		</div> -->
+	<% #end %>
 
-<%= yield %>
+<%#= yield %>
 
 </body>
 </html>

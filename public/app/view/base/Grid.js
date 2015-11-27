@@ -13,7 +13,6 @@ Ext.define('AW.view.base.Grid', {
 	},
 
 	initComponent: function() {
-
 		var unshiftAll = function(array, elements) {
 			return Array.prototype.unshift.apply(array, elements);
 		}

@@ -14,7 +14,6 @@ Ext.define('AW.view.loan.Grid', {
 	},
 
 	store: 'AW.store.Loans',
-	title: 'Loans',
 
 	initComponent: function() {
 

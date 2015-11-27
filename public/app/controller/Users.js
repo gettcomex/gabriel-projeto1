@@ -11,6 +11,7 @@ Ext.define('AW.controller.Users', {
 
 	views: [
 		'AW.view.user.Grid',
+		'AW.view.user.Show',
 		'AW.view.user.WindowForm'
 	],
 
@@ -31,6 +32,9 @@ Ext.define('AW.controller.Users', {
 			},
 			'userwindowform button#cancel': {
 				click: this.onCancelClick
+			},
+			'usershow': {
+				afterrender: this.onShowRender
 			}
 		});
 	},
@@ -114,5 +118,16 @@ Ext.define('AW.controller.Users', {
 
 		form.getForm().reset();
 		win.close();
+	},
+
+	onShowRender: function(form, eOpts) {
+		// TODO: Ajustar para carregar o Usuário atual.
+		var record = Ext.create('AW.model.User', {
+			name: 'John Doe',
+			login: 'johndoe',
+			email: 'john.doe@gmail.com'
+		});
+		
+		form.loadRecord(record);
 	}
 });

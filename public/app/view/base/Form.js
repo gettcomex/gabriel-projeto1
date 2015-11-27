@@ -3,11 +3,12 @@ Ext.define('AW.view.base.Form', {
 	extend: 'Ext.form.Panel',
 	
 	bodyPadding: 10,
-	defaults: {
-		anchor: '100%'
-	},
 
 	initComponent: function() {
+		this.defaults = Ext.applyIf(this.defaults || {}, {
+			anchor: '100%'
+		});
+
 		this.items = this.items || [];
 		this.items.push({
 			xtype: 'hiddenfield',

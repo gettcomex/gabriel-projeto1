@@ -7,9 +7,9 @@ Ext.define('AW.view.queueofbook.Form', {
 	],
 
 	initComponent: function() {
-		this.defaults = Ext.apply({
+		this.defaults = Ext.applyIf(this.defaults || {}, {
 			allowBlank: false
-		}, this.defaults);
+		});
 
 		this.items = [
 			{
