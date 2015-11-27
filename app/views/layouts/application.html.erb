@@ -9,47 +9,6 @@
 </head>
 <body>
 
-	<% #if user_signed_in? %>
-		<!-- <div id="main-nav">
-			<ul>
-				<li>
-					<%= link_to 'Home', root_path %>
-				</li>
-
-				<% if can? :read, Book %>
-					<li>
-						<%= link_to 'Livros', books_path %>
-					</li>
-				<% end %>
-
-				<% if can? :read, Loan %>
-					<li>
-						<%= link_to 'Empréstimos', loans_path %>
-					</li>
-				<% end %>
-
-				<% if can? :read, QueueOfBook %>
-					<li>
-						<%= link_to 'Reservas', queue_of_books_path %>
-					</li>
-				<% end %>
-
-				<% if can? :read, User %>
-					<li>
-						<%= link_to 'Usuários', users_path %>
-					</li>
-				<% end %>
-				
-				<li>
-					<%= link_to 'Meu usuário', current_user %>
-				</li>
-			</ul>
-		</div>
-
-		<div id="user-bar">
-			<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-		</div> -->
-	<% #end %>
 	<%= yield %>
 
 </body>
