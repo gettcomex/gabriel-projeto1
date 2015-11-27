@@ -10,30 +10,32 @@ class QueueOfBooksController < ApplicationController
 
 	def show
 		@queue_of_book = QueueOfBook.find(params[:id])
-		respond_with @queue_of_book
-	end
-
-	def new
-		@queue_of_book = QueueOfBook.new
-		respond_with @queue_of_book
+		render_show @queue_of_book
 	end
 
 	def create
 		@queue_of_book = QueueOfBook.new(params[:queue_of_book])
+		@queue_of_book.save
 
-		flash[:notice] = t_successfully_created_local if @queue_of_book.save
-		respond_with @queue_of_book
+		render_success_message @queue_of_book
 	end
 
 	def destroy
 		@queue_of_book = QueueOfBook.find(params[:id])
 		@queue_of_book.destroy
-		respond_with @queue_of_book
+		
+		render_success_message @queue_of_book
 	end
 
-protected
+private
 	def load_resources
 		@users = User.all
 		@books = Book.not_available
+	end
+
+	def render_show(queue_of_book)
+		render partial: "queue_of_books/queue_of_book", locals: {
+			queue_of_book: queue_of_book
+		}
 	end
 end

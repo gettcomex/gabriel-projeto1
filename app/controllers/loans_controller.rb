@@ -10,32 +10,23 @@ class LoansController < ApplicationController
 
 	def show
 		@loan = Loan.find(params[:id])
-		respond_with @loan
-	end
-
-	def new
-		@loan = Loan.new
-		respond_with @loan
+		render_show @loan
 	end
 
 	def create
 		@loan = Loan.new(params[:loan])
+		@loan.save
 		
-		flash[:notice] = t_successfully_created_local if @loan.save
-		respond_with @loan
+		render_success_message @loan
 	end
 
 	def renew
 		@loan = Loan.find(params[:loan_id])
 		authorize! :renew, @loan
+		
+		@loan.renew
 
-		if @loan.renew
-			flash[:alerts] = ['Loans with reserve can not be renewed.']
-		else
-			flash[:notice] = "Loan was successfully renewed. New date: #{@loan.end_at}"
-		end
-
-		respond_with @loan, location: loan_path(@loan)
+		respond_with @loan
 	end
 
 	def report
@@ -52,7 +43,7 @@ class LoansController < ApplicationController
 		@loans = @loans.where(user_id: params[:user_id]) if params[:user_id].present?
 	end
 
-protected
+private
 	def load_resources
 		@users = User.all
 		@books = Book.all
@@ -64,5 +55,11 @@ protected
 		day = filter[name + '(3i)'].to_i
 
 		Date.new(year, month, day)
+	end
+
+	def render_show(loan)
+		render partial: "loans/loan", locals: {
+			loan: loan
+		}
 	end
 end

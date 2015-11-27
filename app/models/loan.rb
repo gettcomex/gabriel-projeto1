@@ -35,12 +35,11 @@ class Loan < ActiveRecord::Base
 	DURATION_IN_DAYS = 7.days
 
 	def renew
-		if @loan.book.has_queue_of_books?
-			false
+		if self.book.has_queue_of_books?
+			errors.add(:base, 'Loans with reserve can not be renewed.')
 		else
 			self.end_at = Date.now + DURATION_IN_DAYS
 			self.save
-			true
 		end
 	end
 

@@ -2,12 +2,12 @@ LibrarySystem::Application.routes.draw do
 
 	root to: "pages#index"
 
-	match "/home" => "pages#index", :as => :home
+	match "/users/me" => "users#me", :via => :get
 
-	resources :users
-	resources :books
+	resources :users, except: %w(new edit)
+	resources :books, except: %w(new edit)
 	
-	resources :loans, except: %w(edit update destroy) do
+	resources :loans, except: %w(new edit update destroy) do
 
 		put "renew"
 
@@ -17,7 +17,7 @@ LibrarySystem::Application.routes.draw do
 		end
 	end
 
-	resources :queue_of_books, except: %w(edit update)
+	resources :queue_of_books, except: %w(new edit update)
 
 	devise_for :users, :path => "accounts"
 

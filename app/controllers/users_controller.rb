@@ -8,37 +8,33 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		respond_with @user
-	end
-
-	def new
-		@user = User.new
-		respond_with @user
-	end
-
-	def edit
-		@user = User.find(params[:id])
+		render_show @user
 	end
 
 	def create
 		@user = User.new(resource_params)
 
-		flash[:notice] = t_successfully_created_local if @user.save
-		respond_with @user
+		@user.save
+		render_success_message @user
 	end
 
 	def update
 		@user = User.find(params[:id])
-		flash[:notice] = t_successfully_updated_local if @user.update_attributes(resource_params)
-		respond_with @user
+		@user.update_attributes(resource_params)
+		render_success_message @user
 	end
 
 	def destroy
 		@user = User.find(params[:id])
 		@user.destroy
-		flash[:alerts] = @user.flash_alerts
-		respond_with @user
+
+		render_success_message @user
 	end
+
+	def me
+		render_show current_user
+	end
+	
 private
 	def resource_params
 		params.permit(user: permited_fields)[:user]
@@ -50,5 +46,11 @@ private
 		else
 			User::PERMITED_FIELDS
 		end
+	end
+
+	def render_show(user)
+		render partial: "users/user", locals: {
+			user: user
+		}
 	end
 end

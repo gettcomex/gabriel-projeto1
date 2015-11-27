@@ -5,6 +5,7 @@ gem 'kaminari'
 gem 'devise'
 gem 'cancancan', '~> 1.9'
 gem 'strong_parameters'
+gem 'jbuilder', '2.3.2'
 
 group :development, :teste do
 	gem 'byebug'

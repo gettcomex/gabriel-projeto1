@@ -6,7 +6,12 @@ class ApplicationController < ActionController::Base
 
 	before_filter :authenticate_user!, :set_current_user
 
-	respond_to :html, :json, :xml
+	respond_to :json, :xml
+
+protected
+	def render_success_message(resource)
+		render partial: "shared/success_message", locals: { resource: resource }
+	end
 
 private
 	def set_current_user

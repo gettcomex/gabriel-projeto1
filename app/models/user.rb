@@ -8,7 +8,6 @@ class User < ActiveRecord::Base
 	devise :database_authenticatable, :registerable, :recoverable,
 		:rememberable, :trackable, :validatable
 
-	attr_accessor :flash_alerts
 	validates :name, presence: true
 	validates :login, presence: true
 
@@ -36,15 +35,14 @@ class User < ActiveRecord::Base
 
 protected
 	def check_can_be_destroyed!
-		self.flash_alerts = []
 		check_has_loans! & check_has_queue_of_books!
 	end
 
 	def check_has_loans!
-		super "Cannot delete user with loans."
+		super "Cannot delete user with loans"
 	end
 
 	def check_has_queue_of_books!
-		super "Cannot delete user with reserves."
+		super "Cannot delete user with reserves"
 	end
 end
