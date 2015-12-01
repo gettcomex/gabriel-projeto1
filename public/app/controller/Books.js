@@ -59,21 +59,18 @@ Ext.define('AW.controller.Books', {
 
 	onDeleteClick: function(btn, e, eOpts) {
 		var grid = btn.up('grid'),
-			record = grid.getSelectionModel().getSelection()[0],
-			store = grid.getStore();
+			record = grid.getSelectionModel().getSelection()[0];
 		
 		if (record) {
 			record.destroy({
-				success: function(response) {
-					var store = grid.getStore();
-					store.reload();
-				}
+				success: this.onGridRender.bind(this, grid)
 			});
 		}
 	},
 	
 	onSaveClick: function(btn, e, eOpts) {
-		var win = btn.up('window'),
+		var me = this,
+			win = btn.up('window'),
 			form = win.down('form'),
 			values = form.getValues(),
 			model = null;
@@ -85,14 +82,13 @@ Ext.define('AW.controller.Books', {
 			model.save({
 				success: function(response) {
 					var record = form.getRecord(),
-						grid = Ext.ComponentQuery.query('booksgrid')[0],
-						store = grid.getStore();
+						grid = Ext.ComponentQuery.query('booksgrid')[0];
 
 					if (record) {
 						record.set(values);
 					}
 					else {
-						store.reload();
+						me.onGridRender(grid);
 					}
 
 					win.close();

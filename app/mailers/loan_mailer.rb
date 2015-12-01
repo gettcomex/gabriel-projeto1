@@ -7,6 +7,6 @@ class LoanMailer < ActionMailer::Base
 	end
 
 	def create_subject_from(loan)
-		"O livro #{loan.book.title} foi reservado."
+		"Empréstimo do livro #{loan.book.title} efetuado com sucesso."
 	end
 end

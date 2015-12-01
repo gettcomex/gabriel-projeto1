@@ -1,8 +1,6 @@
 class LoansController < ApplicationController
 	load_and_authorize_resource
 
-	before_filter :load_resources, only: %w(new create report)
-
 	def index
 		@loans = Loan.allowed.page(params[:page])
 		respond_with @loans
@@ -44,11 +42,6 @@ class LoansController < ApplicationController
 	end
 
 private
-	def load_resources
-		@users = User.all
-		@books = Book.all
-	end
-
 	def date_from(filter, name)
 		year = filter[name + '(1i)'].to_i
 		month = filter[name + '(2i)'].to_i
